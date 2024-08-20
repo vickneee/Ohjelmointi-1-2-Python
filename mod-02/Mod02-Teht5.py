@@ -4,6 +4,8 @@
 # Yksi naula on 32 luotia.
 # Yksi luoti on 13,3 grammaa.
 
+# https://docs.python.org/3/tutorial/inputoutput.html
+
 luoti = 13.3
 naula = 32 * luoti
 leiviska = 20 * naula
