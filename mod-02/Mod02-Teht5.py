@@ -16,4 +16,8 @@ luodit = float(input("Anna luodit: "))
 
 massa = luodit * luoti + naulat * naula + leiviskat * leiviska
 
-print(f"Massa nykymittojen mukaan:\n{massa / 1000:.0f} kilogramma ja {massa:.2f} grammaa.")
+# Konvettaa kilogrammat ja grammat
+kilogrammat = int(massa // 1000)
+grammat = massa % 1000
+
+print(f"Massa nykymittojen mukaan:\n{kilogrammat} kilogramma ja {grammat:.0f} grammaa.")
