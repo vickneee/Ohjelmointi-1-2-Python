@@ -21,5 +21,3 @@ if sukupuoli == "M":
         print("Miehen hemoglobiini on liian alhainen!")
     else:
         print("Miehen hemoglobiini on liian lkorkea!")
-
-
