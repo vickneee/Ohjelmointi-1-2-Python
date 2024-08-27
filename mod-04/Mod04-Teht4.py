@@ -7,7 +7,7 @@ import random
 koneluku = random.randint(1, 10)
 # print(koneluku) # Testi
 arvaus = 0
-while arvaus !=koneluku:
+while arvaus != koneluku:
     arvaus = int(input("Arvaa luku väliltä 1-10: "))
     if arvaus < koneluku:
         print("Liian pieni arvaus!")
