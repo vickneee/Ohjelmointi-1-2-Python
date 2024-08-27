@@ -13,7 +13,7 @@ summa = 0
 
 for i in range(lukumaara):
     j = random.randint(1, 6)  # Arvotaan luku
-    print(j)
+    # print(j)
     summa += j
 
 print(f"Summa on {summa}")  # Summan tulostus
@@ -28,6 +28,3 @@ for i in range(lukumaara):
     print(lista)  # Lista tulostetuna
 
 print(f"Summa on {sum(lista)}")  # Listan summa tulostus
-
-
-
