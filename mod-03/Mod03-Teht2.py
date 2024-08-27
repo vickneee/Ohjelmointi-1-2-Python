@@ -13,6 +13,8 @@ ohjelma tulostaa Virheellinen hyttiluokka.
 '''
 
 hyttiluokka = input("Anna laivan hyttiluokka (LUX, A, B tai C): ")
+hyttiluokka = hyttiluokka.upper()
+
 if hyttiluokka == "LUX":
     print("LUX on parvekkeellinen hytti yläkannella")
 elif hyttiluokka == "A":
