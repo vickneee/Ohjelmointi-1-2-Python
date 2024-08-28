@@ -15,7 +15,3 @@ for i in range(N):
 pii = 4*n/N
 
 print(f"Ymyrä sisällä on {pii} pistettä")
-
-
-
-
