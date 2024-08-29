@@ -15,8 +15,3 @@ while luku != "":
 
 luvut.sort(reverse=True)
 print(f"Viisi suurinta luku suuruusjärjestyksessä suurimmasta alkaen {luvut[0:5]}")
-
-
-
-
-
