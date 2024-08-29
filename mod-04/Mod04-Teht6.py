@@ -14,4 +14,4 @@ for i in range(N):
         n += 1
 pii = 4*n/N
 
-print(f"Ympyrä sisällä on {pii} pistettä")
+print(f"Ympyrä sisällä on {pii} pistettä. Pyöristettynä {pii:.2f} pistettä.")
