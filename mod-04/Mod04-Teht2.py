@@ -6,6 +6,6 @@ tuumat = float(input("Anna tuumamäärä: "))
 
 while tuumat > 0:
     sentit = tuumat * 2.54
-    print(f"{tuumat} Tuumat ovat {sentit} sentimetriä.")
+    print(f"{tuumat} tuumia on {sentit:.2f} sentimetriä.")
     tuumat = float(input("Anna tuumamäärä: "))
 print("Kiitos ohjelman käytöstä!")
