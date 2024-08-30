@@ -2,15 +2,18 @@
 Kirjoita ohjelma, joka kysyy käyttäjältä lukuja siihen saakka, kunnes tämä syöttää tyhjän merkkijonon lopetusmerkiksi. Lopuksi ohjelma tulostaa saaduista luvuista pienimmän ja suurimman.
 '''
 
-luku = input("Anna luku (Tyhjä merkkijono lopeta): ")
-suurin = luku
-pienin = luku
-while luku != "":
-    luku = input("Anna luku: ")
-    if luku == "":
-        break
-    if luku > suurin:
-        suurin = luku
-    if luku < pienin:
-        pienin = luku
+lukustr = input("Anna luku (Tyhjä merkkijono lopeta): ")
+
+suurin = int(lukustr)
+pienin = int(lukustr)
+
+while lukustr != "":
+    if int(lukustr) > suurin:
+        suurin = int(lukustr)
+    if int(lukustr) < pienin:
+        pienin = int(lukustr)
+    lukustr = input("Anna luku (Tyhjä merkkijono lopeta): ")
+
 print(f"Suurin luku on {suurin}. Pienin luku on {pienin}. Kiitos!")
+
+# Tyhjä merkkijonon lisääminen
