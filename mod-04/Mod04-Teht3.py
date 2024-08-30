@@ -2,7 +2,7 @@
 Kirjoita ohjelma, joka kysyy käyttäjältä lukuja siihen saakka, kunnes tämä syöttää tyhjän merkkijonon lopetusmerkiksi. Lopuksi ohjelma tulostaa saaduista luvuista pienimmän ja suurimman.
 '''
 
-luku = input("Anna luku: ")
+luku = input("Anna luku (Tyhjä merkkijono lopeta): ")
 suurin = luku
 pienin = luku
 while luku != "":
