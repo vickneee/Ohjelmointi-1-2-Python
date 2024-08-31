@@ -5,6 +5,17 @@ Kirjoita parametriton funktio, joka palauttaa paluuarvonaan satunnaisen nopan si
 import random
 
 
-def satunainennoppa():
+def satunnainennoppa():
     luku = random.randint(1, 6)
     return luku
+
+
+# def main():
+
+luku = satunnainennoppa()
+while luku != 6:
+    print(luku)
+    luku = satunnainennoppa()
+print(f"Nyt tuli kuutonen! {luku} Ohjelma lopetetaan.")
+
+# main()
