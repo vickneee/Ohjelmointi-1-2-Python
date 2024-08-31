@@ -10,12 +10,12 @@ def satunnainennoppa():
     return luku
 
 
-# def main():
-
-luku = satunnainennoppa()
-while luku != 6:
-    print(luku)
+def main():
     luku = satunnainennoppa()
-print(f"Nyt tuli kuutonen! {luku} Ohjelma lopetetaan.")
+    while luku != 6:
+        print(luku)
+        luku = satunnainennoppa()
+    print(f"Nyt tuli kuutonen! {luku} Ohjelma lopetetaan.")
 
-# main()
+
+main()
