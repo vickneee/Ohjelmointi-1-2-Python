@@ -6,8 +6,8 @@ import random
 
 
 def satunnainennoppa():
-    luku = random.randint(1, 6)
-    return luku
+    arvottu = random.randint(1, 6)
+    return arvottu
 
 
 def main():
