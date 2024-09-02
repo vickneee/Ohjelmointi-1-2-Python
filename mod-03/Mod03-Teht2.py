@@ -1,4 +1,4 @@
-'''
+"""
 Kirjoita ohjelma,
 joka kysyy käyttäjältä laivan hyttiluokan (LUX, A, B, C)
 ja tulostaa sen sanallisen kuvauksen alla olevan luettelon mukaisesti.
@@ -10,7 +10,7 @@ B on ikkunaton hytti autokannen yläpuolella.
 C on ikkunaton hytti autokannen alapuolella.
 Jos käyttäjä syöttää kelvottoman hyttiluokan,
 ohjelma tulostaa Virheellinen hyttiluokka.
-'''
+"""
 
 hyttiluokka = input("Anna laivan hyttiluokka (LUX, A, B tai C): ")
 hyttiluokka = hyttiluokka.upper()
