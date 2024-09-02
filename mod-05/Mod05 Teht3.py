@@ -12,13 +12,14 @@ koska se voidaan jakaa tasan myös luvulla 3 tai luvulla 7.
 # negatiiviset numerot, 0 ja 1 eivat ole alkulukuja
 numero = int(input("Anna numero: "))
 
-if numero > 1:
-    # Silmukka annetun numeron asti jaottuna kahdella ja lisätty yksi
-    for i in range(2, (numero // 2) + 1):
-        if (numero % i) == 0:
-            print(numero, "ei ole alkuluku!")
-            break
-    else:
-        print(numero, "on alkuluku!")
-else:
+if numero <= 1:
     print(numero, "ei ole alkuluku!")
+    exit()
+
+for i in range(2, numero):
+    if (numero % i) == 0:
+        print(numero, "ei ole alkuluku!")
+        break
+
+else:
+    print(numero, "on alkuluku!")
