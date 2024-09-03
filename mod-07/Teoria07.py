@@ -41,3 +41,16 @@ while jatketaan:
 print("Antamasi luvut satunnaisessa järjestyksessä:")
 for arvo in numerot:
     print(arvo)
+
+
+#####
+
+# luodaan tyhjä joukko numeroita varten, huomaa poikkeava tapa
+numerot = set()
+print(numerot)
+
+# luodaan tyhja dictionary numeroita varten
+numerot = {}
+numerot1 = dict()
+print(numerot)
+print(numerot1)
