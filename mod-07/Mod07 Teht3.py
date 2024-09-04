@@ -11,3 +11,31 @@ kunnes hän haluaa lopettaa. (ICAO-koodi on lentoaseman yksilöivä tunniste.
 Esimerkiksi Helsinki-Vantaan lentoaseman ICAO-koodi on EFHK.
 Löydät koodeja helposti selaimen avulla.)
 """
+
+valikko = int(input("Haluatko syöttää uuden lentoaseman (Valitse nro 1),\nhaluatko hakea lentoaseman tiedot (Valitse nro 2)\ntai haluatko lopeta? (Valitse nro 3): "))
+
+eka = 1
+toka = 2
+kolm = 3
+lentoasemat = dict()
+
+while valikko != kolm:
+    if valikko == eka:
+        print("Syötit nro 1!")
+        icao_koodi_syotto = input("Syöttää lentoaseman ICAO-koodi: ")
+        lentoaseman_nimi = input("Syöttää lentoaseman nimi: ")
+        lentoasemat[icao_koodi_syotto] = lentoaseman_nimi
+        print(f"Lisätty lentoasema: {lentoasemat}")
+    elif valikko == toka:
+        print("Hae lentoaseman ICA-koodi: ")
+        icao_koodi_haku = input("Hae ICAO-koodi: ")
+        if icao_koodi_haku not in lentoasemat:
+            print("Valitettavasti lentoasema puutu sanakirjasta.")
+            continue
+        elif icao_koodi_haku in lentoasemat:
+            haettu_koodi = lentoasemat[icao_koodi_haku]
+            print(f"Haettu lentoasema: {icao_koodi_haku} : {haettu_koodi}.")
+
+    valikko = int(input("Haluatko syöttää uuden lentoaseman (Valitse nro 1),\nhaluatko hakea lentoaseman tiedot (Valitse nro 2)\ntai haluatko lopeta? (Valitse nro 3): "))
+
+print("Syötit nro 3! Ohjelma lopetetaan!")
