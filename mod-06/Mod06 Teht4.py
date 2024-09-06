@@ -9,6 +9,11 @@ jossa luot listan, kutsut funktiota ja tulostat sen palauttaman summan.
 def summalista(parameterlista):
     return sum(parameterlista)
 
+    # summa = 0
+    # for luku in parameterlista:
+    #     summa += luku
+    # return summa
+
 
 lista = [1, 2, 9, 8, 3, 4, 5]
 print(f"Lista tulostetuna on: {lista}. Listassa olevien lukujen summa on: {summalista(lista)}.")
