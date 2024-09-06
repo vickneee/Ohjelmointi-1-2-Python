@@ -42,4 +42,5 @@ tulos = tietokantahaku(sql)
 for rivi in tulos:
     print(f"Maan {maa} iso_koodi on {rivi[0]} ja maa sijaitsee {rivi[1]}-ssa")
 
-
+yhteys.close()
+print("Yhteys suljettu")
