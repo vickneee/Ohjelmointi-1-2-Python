@@ -25,6 +25,8 @@ yksikkohinta1 = pizza_hinta(pizza1, hinta1)
 yksikkohinta2 = pizza_hinta(pizza2, hinta2)
 
 if yksikkohinta1 < yksikkohinta2:
+    print("Yksikkohinta1:", yksikkohinta1)
+    print("Yksikkohinta2:", yksikkohinta2)
     print("Ensimmäine pizza antaa paremman vastineen rahalle.")
 else:
     print("Toine pizza antaa paremman vastineen rahalle.")
