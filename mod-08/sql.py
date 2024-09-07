@@ -15,6 +15,7 @@ def maakoodi(nimi):
             print(f"Maan {nimi} iso_koodi on {rivi[0]} ja maa sijaitsee {rivi[1]}-ssa")
     return
 
+
 # Versio 2, geneerinen aliohjelma
 def tietokantahaku(sql):
     kursori = yhteys.cursor()
@@ -24,13 +25,13 @@ def tietokantahaku(sql):
 
 
 yhteys = mysql.connector.connect(
-         host='127.0.0.1',
-         port= 3306,
-         database="flight_game",
-         user='victoria',
-         password='Metro',
-         autocommit=True
-         )
+    host='127.0.0.1',
+    port=3306,
+    database="flight_game",
+    user='victoria',
+    password='Metro',
+    autocommit=True
+)
 
 # Versio 1, jossa jokaista maata haetaan erikseen alihojelmalla
 maa = input("Anna maa nimi: ")
