@@ -1,3 +1,3 @@
-# Ohjelmointi1 tehtävät
+# Ohjelmointi1
 
 Ohjelmointi1 tehtävät.
