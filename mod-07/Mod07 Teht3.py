@@ -33,8 +33,8 @@ while valikko != kolm:
             print("Valitettavasti lentoasema puutu sanakirjasta.")
             continue
         elif icao_koodi_haku in lentoasemat:
-            haettu_koodi = lentoasemat[icao_koodi_haku]
-            print(f"Haettu lentoasema: {icao_koodi_haku} : {haettu_koodi}.")
+            lentoaseman_nimi = lentoasemat[icao_koodi_haku]
+            print(f"Haettu lentoasema: {icao_koodi_haku} : {lentoaseman_nimi}.")
 
     valikko = int(input("Haluatko syöttää uuden lentoaseman (Valitse nro 1),\nhaluatko hakea lentoaseman tiedot (Valitse nro 2)\ntai haluatko lopeta? (Valitse nro 3): "))
 
