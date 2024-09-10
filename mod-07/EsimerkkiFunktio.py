@@ -4,10 +4,15 @@ Sanakirja
 - yksi alkio koostuu avain-arvo parista 'avain': 'arvo'
 """
 
+# Esimerkki puhelinluettelon toteutuksesta sanakirjalla
+# - puhelinNumerot sanakirja, jossa avain on nimi ja arvo on puhelinnumero
+# - käyttäjä voi lisätä uuden yhteystiedon
+# - käyttäjä voi tulostaa kaikki puhelinnumerot
+# - käyttäjä voi hakea numeron nimellä
 
-# Oma puhelinluettelo
 
-# -- funktiot alkaa --
+# -- funktiot --
+
 # funktio/aliohjelma tulostaa puhelinluettelon kaikki arvot
 def tulosta_luettelo():
     print("Puhelinluettelon sisältö:")
