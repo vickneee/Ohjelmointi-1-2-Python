@@ -7,6 +7,37 @@ Ensimmäisen asteen yhtälön esimerkki oli jo selitetty aiemmin:
 3x + 6 = 0 \quad \Rightarrow \quad x = -2
 \]
 
+Tässä sinulle opiskeluohjeet ensimmäisen, toisen ja kolmannen asteen yhtälöiden ratkaisemiseen!
+
+1. Ensimmäisen asteen yhtälöt
+Ensimmäisen asteen yhtälöt ovat muotoa:
+
+ax + b = 0
+
+missä aa ja bb ovat vakioita, ja xx on tuntematon. 
+Ratkaisu on yksinkertainen ja perustuu muuttujan eristämiseen.
+
+Vaiheet:
+Siirrä vakio oikealle puolelle:
+ax = -b
+
+Jaa molemmat puolet kertoimella aa:
+x = \frac{-b}{a}
+x= 
+a
+−b
+​
+ 
+Esimerkki:
+Ratkaistaan yhtälö 3x + 6 = 0:
+
+Vähennä 6 molemmilta puolilta:
+3x = -6
+3x=−6
+Jaa molemmat puolet 3:lla:
+x = -2
+x=−2
+
 ---
 
 ### 2. **Toisen asteen yhtälöt ja \(\Delta\)**
