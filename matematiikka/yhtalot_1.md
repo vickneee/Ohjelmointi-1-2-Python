@@ -12,22 +12,22 @@ missä (a) ja (b) ovat vakioita, ja (x) on tuntematon.
 ### Ratkaisuvaiheet:
 1. Siirrä vakio oikealle puolelle:
    ax = -b 
-2. Jaa molemmat puolet kertoimella \(a\):
-   x = \frac{-b}{a}
+2. Jaa molemmat puolet kertoimella (a):
+   x = -b / a
 
 ### Esimerkki:
-Ratkaistaan yhtälö \(3x + 6 = 0\):
+Ratkaistaan yhtälö (3x + 6 = 0):
 1. Vähennä 6 molemmilta puolilta:
-   \[ 3x = -6 \]
+   3x = -6
 2. Jaa molemmat puolet 3:lla:
-   \[ x = -2 \]
+   x = -2
 
 ---
 
-## 2. Toisen asteen yhtälöt ja \(\Delta\)
+## 2. Toisen asteen yhtälöt ja (Delta)
 
 Toisen asteen yhtälöitä ratkaistaan usein käyttämällä toisen asteen yhtälön ratkaisukaavaa:
-\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+x = -b + - sqrt(b^2 - 4ac) / 2a
 
 ### Tapaus 1: \(\Delta > 0\)
 Tämä tarkoittaa, että yhtälöllä on kaksi erilaista reaaliratkaisua.
