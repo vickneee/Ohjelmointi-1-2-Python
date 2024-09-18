@@ -32,13 +32,13 @@ x = (-b +/- sqrt(b^2 - 4ac)) / 2a
 ### Tapaus 1: (Delta > 0)
 Tämä tarkoittaa, että yhtälöllä on kaksi erilaista reaaliratkaisua.
 
-#### Esimerkki: \(x^2 - 3x + 2 = 0\)
-1. Lasketaan diskriminantti \(\Delta\):
-   \[ \Delta = (-3)^2 - 4(1)(2) = 9 - 8 = 1 \]
+#### Esimerkki: (x^2 - 3x + 2 = 0)
+1. Lasketaan diskriminantti (Delta):
+   Delta = (-3)^2 - 4(1)(2) = 9 - 8 = 1
 2. Käytetään ratkaisukaavaa:
-   \[ x = \frac{-(-3) \pm \sqrt{1}}{2(1)} = \frac{3 \pm 1}{2} \]
+   x = (-(-3) - sqrt(1)) / 2*1 = (3 - 1) / 2
 3. Ratkaisut:
-   \[ x_1 = \frac{3 + 1}{2} = 2, \quad x_2 = \frac{3 - 1}{2} = 1 \]
+   x_1 = (3 + 1) / 2 = 2, x_2 = (3 - 1) / (2) = 1
 
 ### Tapaus 2: (Delta = 0)
 Tämä tarkoittaa, että yhtälöllä on yksi reaaliratkaisu.
