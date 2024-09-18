@@ -6,14 +6,14 @@ Tässä on opiskeluohjeet ensimmäisen, toisen ja kolmannen asteen yhtälöiden 
 ## 1. Ensimmäisen asteen yhtälöt
 
 Ensimmäisen asteen yhtälöt ovat muotoa:
-\[ ax + b = 0 \]
-missä \(a\) ja \(b\) ovat vakioita, ja \(x\) on tuntematon.
+ax + b = 0
+missä (a) ja (b) ovat vakioita, ja (x) on tuntematon.
 
 ### Ratkaisuvaiheet:
 1. Siirrä vakio oikealle puolelle:
-   \[ ax = -b \]
+   ax = -b 
 2. Jaa molemmat puolet kertoimella \(a\):
-   \[ x = \frac{-b}{a} \]
+   x = \frac{-b}{a}
 
 ### Esimerkki:
 Ratkaistaan yhtälö \(3x + 6 = 0\):
@@ -79,10 +79,10 @@ Kolmannen asteen yhtälön yleinen muoto on:
 3. Ratkaistaan jäljelle jäänyt toisen asteen yhtälö \(x^2 - 5x + 6 = 0\) käyttämällä toisen asteen ratkaisukaavaa:
    \[ x = \frac{-(-5) \pm \sqrt{(-5)^2 - 4(1)(6)}}{2(1)} = \frac{5 \pm \sqrt{25 - 24}}{2} = \frac{5 \pm 1}{2} \]
 4. Ratkaisut:
-   \[ x_1 = \frac{5 + 1}{2} = 3, \quad x_2 = \frac{5 - 1}{2} = 2 \]
+   x_1 = \frac{5 + 1}{2} = 3, \quad x_2 = \frac{5 - 1}{2} = 2 
 
 Joten yhtälöllä on kolme reaaliratkaisua:
-\[ x = 1, \quad x = 2, \quad x = 3 \]
+x = 1, x = 2, x = 3
 
 ---
 
