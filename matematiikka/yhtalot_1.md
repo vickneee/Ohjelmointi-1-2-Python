@@ -27,9 +27,9 @@ Ratkaistaan yhtälö (3x + 6 = 0):
 ## 2. Toisen asteen yhtälöt ja (Delta)
 
 Toisen asteen yhtälöitä ratkaistaan usein käyttämällä toisen asteen yhtälön ratkaisukaavaa:
-x = -b + - sqrt(b^2 - 4ac) / 2a
+x = (-b +/- sqrt(b^2 - 4ac)) / 2a
 
-### Tapaus 1: \(\Delta > 0\)
+### Tapaus 1: (Delta > 0)
 Tämä tarkoittaa, että yhtälöllä on kaksi erilaista reaaliratkaisua.
 
 #### Esimerkki: \(x^2 - 3x + 2 = 0\)
@@ -40,16 +40,16 @@ Tämä tarkoittaa, että yhtälöllä on kaksi erilaista reaaliratkaisua.
 3. Ratkaisut:
    \[ x_1 = \frac{3 + 1}{2} = 2, \quad x_2 = \frac{3 - 1}{2} = 1 \]
 
-### Tapaus 2: \(\Delta = 0\)
+### Tapaus 2: (Delta = 0)
 Tämä tarkoittaa, että yhtälöllä on yksi reaaliratkaisu.
 
-#### Esimerkki: \(x^2 - 4x + 4 = 0\)
-1. Lasketaan diskriminantti \(\Delta\):
-   \[ \Delta = (-4)^2 - 4(1)(4) = 16 - 16 = 0 \]
+#### Esimerkki: (x^2 - 4x + 4 = 0)
+1. Lasketaan diskriminantti (Delta):
+   Delta = (-4)^2 - 4(1)(4) = 16 - 16 = 0
 2. Käytetään ratkaisukaavaa:
-   \[ x = \frac{-(-4) \pm \sqrt{0}}{2(1)} = \frac{4}{2} = 2 \]
+   x = (-(-4) - sqrt(0)) / 2(1) = 4 / 2 = 2
 
-### Tapaus 3: \(\Delta < 0\)
+### Tapaus 3: (Delta < 0)
 Tämä tarkoittaa, että yhtälöllä on kaksi kompleksiratkaisua.
 
 #### Esimerkki: \(x^2 + x + 1 = 0\)
