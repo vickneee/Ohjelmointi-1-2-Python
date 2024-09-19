@@ -12,44 +12,44 @@ missä (a) ja (b) ovat vakioita, ja (x) on tuntematon.
 ### Ratkaisuvaiheet:
 1. Siirrä vakio oikealle puolelle:
    ax = -b 
-2. Jaa molemmat puolet kertoimella \(a\):
-   x = \frac{-b}{a}
+2. Jaa molemmat puolet kertoimella (a):
+   x = -b / a
 
 ### Esimerkki:
-Ratkaistaan yhtälö \(3x + 6 = 0\):
+Ratkaistaan yhtälö (3x + 6 = 0):
 1. Vähennä 6 molemmilta puolilta:
-   \[ 3x = -6 \]
+   3x = -6
 2. Jaa molemmat puolet 3:lla:
-   \[ x = -2 \]
+   x = -2
 
 ---
 
-## 2. Toisen asteen yhtälöt ja \(\Delta\)
+## 2. Toisen asteen yhtälöt ja (Delta)
 
 Toisen asteen yhtälöitä ratkaistaan usein käyttämällä toisen asteen yhtälön ratkaisukaavaa:
-\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+x = (-b +/- sqrt(b^2 - 4ac)) / 2a
 
-### Tapaus 1: \(\Delta > 0\)
+### Tapaus 1: (Delta > 0)
 Tämä tarkoittaa, että yhtälöllä on kaksi erilaista reaaliratkaisua.
 
-#### Esimerkki: \(x^2 - 3x + 2 = 0\)
-1. Lasketaan diskriminantti \(\Delta\):
-   \[ \Delta = (-3)^2 - 4(1)(2) = 9 - 8 = 1 \]
+#### Esimerkki: (x^2 - 3x + 2 = 0)
+1. Lasketaan diskriminantti (Delta):
+   Delta = (-3)^2 - 4(1)(2) = 9 - 8 = 1
 2. Käytetään ratkaisukaavaa:
-   \[ x = \frac{-(-3) \pm \sqrt{1}}{2(1)} = \frac{3 \pm 1}{2} \]
+   x = (-(-3) - sqrt(1)) / 2*1 = (3 - 1) / 2
 3. Ratkaisut:
-   \[ x_1 = \frac{3 + 1}{2} = 2, \quad x_2 = \frac{3 - 1}{2} = 1 \]
+   x_1 = (3 + 1) / 2 = 2, x_2 = (3 - 1) / (2) = 1
 
-### Tapaus 2: \(\Delta = 0\)
+### Tapaus 2: (Delta = 0)
 Tämä tarkoittaa, että yhtälöllä on yksi reaaliratkaisu.
 
-#### Esimerkki: \(x^2 - 4x + 4 = 0\)
-1. Lasketaan diskriminantti \(\Delta\):
-   \[ \Delta = (-4)^2 - 4(1)(4) = 16 - 16 = 0 \]
+#### Esimerkki: (x^2 - 4x + 4 = 0)
+1. Lasketaan diskriminantti (Delta):
+   Delta = (-4)^2 - 4(1)(4) = 16 - 16 = 0
 2. Käytetään ratkaisukaavaa:
-   \[ x = \frac{-(-4) \pm \sqrt{0}}{2(1)} = \frac{4}{2} = 2 \]
+   x = (-(-4) - sqrt(0)) / 2(1) = 4 / 2 = 2
 
-### Tapaus 3: \(\Delta < 0\)
+### Tapaus 3: (Delta < 0)
 Tämä tarkoittaa, että yhtälöllä on kaksi kompleksiratkaisua.
 
 #### Esimerkki: \(x^2 + x + 1 = 0\)
