@@ -16,13 +16,11 @@ def satunnainennoppa(tahkoja):
 
 
 nopan_silmaluku = int(input("Anna nopan silmäluku: "))
-
 while True:
     arvottu = satunnainennoppa(nopan_silmaluku)
     print(arvottu)
 
     if arvottu == nopan_silmaluku:
         break
-
 
 print(f"Kokonaissumma on {arvottu}! Nopan silmaluku oli {nopan_silmaluku}. Ohjelma lopetetaan.")
