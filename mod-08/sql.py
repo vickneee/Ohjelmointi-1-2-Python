@@ -4,29 +4,29 @@ import mysql.connector
 
 # Versio 1, tarvespesifi aliohjelma
 def maakoodi(nimi):
-    sql = f"SELECT iso_country, continent FROM country where name='{nimi}'"
-    print(sql)
+    sql_q = f"SELECT iso_country, continent FROM country where name='{nimi}'"
+    print(sql_q)
     kursori = yhteys.cursor()
-    kursori.execute(sql)
-    tulos = kursori.fetchall()
+    kursori.execute(sql_q)
+    exe_tulos = kursori.fetchall()
     if kursori.rowcount > 0:
-        for rivi in tulos:
+        for rivi in exe_tulos:
             print(f"Maan {nimi} iso_koodi on {rivi[0]} ja maa sijaitsee {rivi[1]}-ssa")
     return
 
 
 # Versio 2, geneerinen aliohjelma
-def tietokantahaku(sql):
+def tietokantahaku(sql_qq):
     kursori = yhteys.cursor()
-    kursori.execute(sql)
-    tulos = kursori.fetchall()
-    return tulos
+    kursori.execute(sql_qq)
+    result = kursori.fetchall()
+    return result
 
 
 yhteys = mysql.connector.connect(
     host='127.0.0.1',
     port=3306,
-    database="flight_game",
+    database="otakiinnijossaat",
     user='victoria',
     password='Metro',
     autocommit=True

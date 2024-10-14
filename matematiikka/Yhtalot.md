@@ -1,13 +1,9 @@
-Tässä on kattava esimerkki kaikista tapauksista (toisen ja kolmannen asteen yhtälöt) ja niiden ratkaisumenetelmistä.
-
 ### 1. **Ensimmäisen asteen yhtälö**
 
 Ensimmäisen asteen yhtälön esimerkki oli jo selitetty aiemmin:
 \[
 3x + 6 = 0 \quad \Rightarrow \quad x = -2
 \]
-
-Tässä sinulle opiskeluohjeet ensimmäisen, toisen ja kolmannen asteen yhtälöiden ratkaisemiseen!
 
 1. Ensimmäisen asteen yhtälöt
 Ensimmäisen asteen yhtälöt ovat muotoa:
@@ -163,5 +159,3 @@ Kolmannen asteen yhtälöitä voi yrittää ratkaista:
 - **Etsimällä rationaalisia juuria**.
 - **Jakamalla tekijöihin** ja vähentämällä yhtälön astetta.
 - Jos polynomi ei mene helposti tekijöihin, on olemassa monimutkaisempia kaavoja, mutta ne ovat usein liian monimutkaisia käsinratkaisuun.
-
-Nyt sinulla on esimerkit kaikista asteen yhtälöistä, ja ne kattavat erityyppisiä ratkaisuja eri tapauksissa!

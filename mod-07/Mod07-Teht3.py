@@ -12,7 +12,9 @@ Esimerkiksi Helsinki-Vantaan lentoaseman ICAO-koodi on EFHK.
 Löydät koodeja helposti selaimen avulla.)
 """
 
-valikko = int(input("Haluatko syöttää uuden lentoaseman (Valitse nro 1),\nhaluatko hakea lentoaseman tiedot (Valitse nro 2)\ntai haluatko lopeta? (Valitse nro 3): "))
+valikko = int(input("Haluatko syöttää uuden lentoaseman (Valitse nro 1),"
+                    "\nhaluatko hakea lentoaseman tiedot (Valitse nro 2)"
+                    "\ntai haluatko lopeta? (Valitse nro 3): "))
 
 eka = 1
 toka = 2
@@ -36,6 +38,8 @@ while valikko != kolm:
             lentoaseman_nimi = lentoasemat[icao_koodi_haku]
             print(f"Haettu lentoasema: {icao_koodi_haku} : {lentoaseman_nimi}.")
 
-    valikko = int(input("Haluatko syöttää uuden lentoaseman (Valitse nro 1),\nhaluatko hakea lentoaseman tiedot (Valitse nro 2)\ntai haluatko lopeta? (Valitse nro 3): "))
+    valikko = int(input("Haluatko syöttää uuden lentoaseman (Valitse nro 1),\n"
+                        "haluatko hakea lentoaseman tiedot (Valitse nro 2)\n"
+                        "tai haluatko lopeta? (Valitse nro 3): "))
 
 print("Syötit nro 3! Ohjelma lopetetaan!")

@@ -7,18 +7,26 @@ Lopuksi ohjelma luettelee syötetyt nimet yksi kerrallaan allekkain mielivaltais
 Käytä joukkotietorakennetta nimien tallentamiseen.
 """
 
-# Alustetaan tyhjä joukku
-nimi_joukko = set()
 
-nimi = input("Anna nimi (Tyhjä merkkijono lopeta): ")
+def tyhja_merkkijono():
 
-while nimi != "":
-    if nimi in nimi_joukko:
-        print("Aiemmin syötetty nimi")
-    else:
-        print("Ilmeistyi uusi nimi. Lisätään nimi joukkoon.")
-        nimi_joukko.add(nimi)  # Joukkotietorakennetta nimien tallentamiseen.
+    # Alustetaan tyhjä joukku
+    nimi_joukko = set()
+
     nimi = input("Anna nimi (Tyhjä merkkijono lopeta): ")
 
-for i in nimi_joukko:
-    print(i)
+    while nimi != "":
+        if nimi in nimi_joukko:
+            print("Aiemmin syötetty nimi")
+        else:
+            print("Ilmeistyi uusi nimi. Lisätään nimi joukkoon.")
+        nimi_joukko.add(nimi)  # Joukkotietorakennetta nimien tallentamiseen.
+        nimi = input("Anna nimi: (Tyhjä merkkijono lopeta): ")
+
+    for i in nimi_joukko:
+        print(i)
+
+    return nimi_joukko
+
+
+tyhja_merkkijono()
