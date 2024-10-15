@@ -5,6 +5,7 @@ jossa luot uuden auton (rekisteritunnus ABC-123, huippunopeus 142 km/h). Tulosta
 auton kaikki ominaisuudet."""
 
 
+# Auto-luokka (class)
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
         self.rekisteritunnus = rekisteritunnus
@@ -13,8 +14,10 @@ class Auto:
         self.matka = 0
 
 
+# Luodaan auto-olio (object)
 auto = Auto("ABC-123", 142)
 
+# Tulostetaan auton ominaisuudet (properties)
 print(f"Rekisteritunnus: {auto.rekisteritunnus} \n"
       f"Huippunopeus: {auto.huippunopeus} km/h \n"
       f"Nopeus: {auto.nopeus} \n"

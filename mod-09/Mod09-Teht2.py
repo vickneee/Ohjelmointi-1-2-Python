@@ -6,6 +6,7 @@ sitten hätäjarrutus määräämällä nopeuden muutos -200 km/h ja tulosta uus
 päivittää."""
 
 
+# Auto-luokka (class)
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
         self.rekisteritunnus = rekisteritunnus
@@ -13,6 +14,7 @@ class Auto:
         self.nopeus = 0
         self.matka = 0
 
+    # Kiihdytä-metodi (funktio)
     def kiihdyta(self, muutos):
         if muutos < 0:
             if self.nopeus + muutos < 0:
@@ -26,18 +28,27 @@ class Auto:
                 self.nopeus += muutos
 
 
+# Luodaan auto-olio (object)
 auto = Auto("ABC-123", 142)
-# print(f"Rekisteritunnus: {auto.rekisteritunnus} \n"
-#       f"Huippunopeus: {auto.huippunopeus} km/h \n"
-#       f"Nopeus: {auto.nopeus} \n"
-#       f"Matka: {auto.matka}")
-print(f"Nopeus: {auto.nopeus}")
+
+# Tulostetaan auton ominaisuudet (properties)
+print(f"Rekisteritunnus: {auto.rekisteritunnus} \n"
+      f"Huippunopeus: {auto.huippunopeus} km/h \n"
+      f"Nopeus: {auto.nopeus} \n"
+      f"Matka: {auto.matka}")
+
+# Kiihdytetään autoa ja tulostetaan nopeus (speed)
 auto.kiihdyta(+30)
-# print(f"Nopeus: {auto.nopeus}")
-auto.kiihdyta(+70)
-# print(f"Nopeus: {auto.nopeus}")
-auto.kiihdyta(+50)
-print(f"Nopeus: {auto.nopeus}")
-auto.kiihdyta(-200)
 print(f"Nopeus: {auto.nopeus}")
 
+# Kiihdytetään autoa ja tulostetaan nopeus (speed)
+auto.kiihdyta(+70)
+print(f"Nopeus: {auto.nopeus}")
+
+# Kiihdytetään autoa ja tulostetaan nopeus (speed)
+auto.kiihdyta(+50)
+print(f"Nopeus: {auto.nopeus}")
+
+# Hätäjarrutus ja tulostetaan nopeus (speed)
+auto.kiihdyta(-200)
+print(f"Nopeus: {auto.nopeus}")
