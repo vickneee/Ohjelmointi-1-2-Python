@@ -38,13 +38,13 @@ class Auto:
         return self.matka
 
 
+# Pääohjelma
 # Luodaan auto-olio (object) ja tulostetaan auton ominaisuudet (properties)
 auto = []
 for i in range(10):
-    huippunopeus = (random.randint(100, 200))
-    auto.append(Auto(f"ABC-{i+1}", huippunopeus))
-    # print(f"Rekisteritunnus: {auto[i].rekisteritunnus} \n"
-    #       f"Huippunopeus: {auto[i].huippunopeus} km/h")
+    maxnopeus = (random.randint(100, 200))
+    auto.append(Auto(f"ABC-{i+1}", maxnopeus))
+    # print(f"Auto {auto[i].rekisteritunnus} | Huippunopeus {auto[i].huippunopeus} km/h")
 
 # Kilpailu
 kilpailu = True
