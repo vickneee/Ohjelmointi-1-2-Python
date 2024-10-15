@@ -63,4 +63,3 @@ for i in range(10):
     print(f"{auto[i].rekisteritunnus:<10} | {auto[i].huippunopeus} "
           f"{'km/h':<10} | {auto[i].nopeus} {'km/h':6} | {auto[i].matka} "
           f"km")
-
