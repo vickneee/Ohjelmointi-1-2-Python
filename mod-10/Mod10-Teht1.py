@@ -45,5 +45,3 @@ hissi1.siirry_kerrokseen(1)
 print(hissi1.alin_kerros)
 hissi1.siirry_kerrokseen(7)
 print(hissi1.alin_kerros)
-
-
