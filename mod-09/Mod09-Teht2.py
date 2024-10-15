@@ -28,27 +28,27 @@ class Auto:
                 self.nopeus += muutos
 
 
-# Luodaan auto-olio (object)
-auto = Auto("ABC-123", 142)
+# Luodaan auto-olio (object) Rekisteritunnuksella ABC-123 ja Huippunopeuksella 142 km/h
+auto1 = Auto("ABC-123", 142)
 
 # Tulostetaan auton ominaisuudet (properties)
-print(f"Rekisteritunnus: {auto.rekisteritunnus} \n"
-      f"Huippunopeus: {auto.huippunopeus} km/h \n"
-      f"Nopeus: {auto.nopeus} \n"
-      f"Matka: {auto.matka}")
+print(f"Rekisteritunnus: {auto1.rekisteritunnus} \n"
+      f"Huippunopeus: {auto1.huippunopeus} km/h \n"
+      f"Nopeus: {auto1.nopeus} \n"
+      f"Matka: {auto1.matka}")
 
-# Kiihdytetään autoa ja tulostetaan nopeus (speed)
-auto.kiihdyta(+30)
-print(f"Nopeus: {auto.nopeus}")
+# Kiihdytetään autoa 30 km/h
+auto1.kiihdyta(+30)
 
-# Kiihdytetään autoa ja tulostetaan nopeus (speed)
-auto.kiihdyta(+70)
-print(f"Nopeus: {auto.nopeus}")
+# Kiihdytetään autoa vielä 70 km/h
+auto1.kiihdyta(+70)
 
-# Kiihdytetään autoa ja tulostetaan nopeus (speed)
-auto.kiihdyta(+50)
-print(f"Nopeus: {auto.nopeus}")
+# Kiihdytetään autoa vielä 50 km/h
+auto1.kiihdyta(+50)
+
+# Tulostetaan nopeus (speed) 30 + 70 + 50 = 150 km/h
+print(f"Nopeus: {auto1.nopeus}")
 
 # Hätäjarrutus ja tulostetaan nopeus (speed)
-auto.kiihdyta(-200)
-print(f"Nopeus: {auto.nopeus}")
+auto1.kiihdyta(-200)
+print(f"Nopeus: {auto1.nopeus}")

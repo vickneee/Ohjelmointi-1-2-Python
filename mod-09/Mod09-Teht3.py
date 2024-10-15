@@ -31,7 +31,7 @@ class Auto:
         return self.matka
 
 
-# Luodaan auto-olio (object)
+# Luodaan auto-olio (object) Rekisteritunnuksella ABC-123 ja Huippunopeuksella 142 km/h
 auto = Auto("ABC-123", 142)
 
 # Tulostetaan auton ominaisuudet (properties)
