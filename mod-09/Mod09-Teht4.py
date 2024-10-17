@@ -40,26 +40,28 @@ class Auto:
 
 # Pääohjelma
 # Luodaan auto-olio (object) ja tulostetaan auton ominaisuudet (properties)
-auto = []
+auto_lista = []
 for i in range(10):
     maxnopeus = (random.randint(100, 200))
-    auto.append(Auto(f"ABC-{i+1}", maxnopeus))
+    auto_lista.append(Auto(f"ABC-{i+1}", maxnopeus))
     # print(f"Auto {auto[i].rekisteritunnus} | Huippunopeus {auto[i].huippunopeus} km/h")
 
 # Kilpailu
 kilpailu = True
 while kilpailu:
     for i in range(10):
-        auto[i].kiihdyta(random.randint(-10, 15))
-        auto[i].auto_kuljee(1)
-        if auto[i].matka >= 10000:
+        auto_lista[i].kiihdyta(random.randint(-10, 15))
+        auto_lista[i].auto_kuljee(1)
+        if auto_lista[i].matka >= 10000:
             kilpailu = False
+            voittaja = auto_lista[i].rekisteritunnus
+            print(f"\nVoittaja on auto {voittaja} ja se on kulkenut {auto_lista[i].matka} km.")
             break
 
 # Tulostetaan kilpailun tulokset
-print("\nKilpailun tulokset:")
+print("Kilpailun tulokset: \n")
 print(f"{'Rek.tunnus':<10} | {'Huippunopeus':<14} | {'Nopeus':<10} | {'Matka':<10}")
 for i in range(10):
-    print(f"{auto[i].rekisteritunnus:<10} | {auto[i].huippunopeus} "
-          f"{'km/h':<10} | {auto[i].nopeus} {'km/h':6} | {auto[i].matka} "
+    print(f"{auto_lista[i].rekisteritunnus:<10} | {auto_lista[i].huippunopeus} "
+          f"{'km/h':<10} | {auto_lista[i].nopeus} {'km/h':6} | {auto_lista[i].matka} "
           f"km")
