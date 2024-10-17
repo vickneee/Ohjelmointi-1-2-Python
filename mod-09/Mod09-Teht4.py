@@ -33,7 +33,7 @@ class Auto:
                 self.nopeus += muutos
 
     # Kulje-metodi (funktio)
-    def kulje(self, tuntimaara):
+    def auto_kuljee(self, tuntimaara):
         self.matka = self.nopeus * tuntimaara + self.matka
         return self.matka
 
@@ -51,7 +51,7 @@ kilpailu = True
 while kilpailu:
     for i in range(10):
         auto[i].kiihdyta(random.randint(-10, 15))
-        auto[i].kulje(1)
+        auto[i].auto_kuljee(1)
         if auto[i].matka >= 10000:
             kilpailu = False
             break
