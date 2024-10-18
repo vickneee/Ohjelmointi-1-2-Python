@@ -56,9 +56,12 @@ class PolttoMoottoriAuto(Auto):
 sahkoauto = SahkoAuto("ABC-15", 180, 52.5)
 polttomoottoriauto = PolttoMoottoriAuto("ACD-123", 165, 32.3)
 
+sahkoauto.nopeus = 90
+polttomoottoriauto.nopeus = 95
+
 # Aseta kummallekin autolle haluamasi nopeus
-sahkoauto.kiihdyta(random.randint(0, 180))
-polttomoottoriauto.kiihdyta(random.randint(0, 165))
+sahkoauto.kiihdyta(random.randint(-10, 15))
+polttomoottoriauto.kiihdyta(random.randint(-10, 15))
 
 sahkoauto.kuljee(3)
 polttomoottoriauto.kuljee(3)
