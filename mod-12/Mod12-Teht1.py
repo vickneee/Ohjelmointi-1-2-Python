@@ -2,7 +2,7 @@
 esiteltävää rajapintaa: https://api.chucknorris.io/. Käyttäjälle on näytettävä pelkkä vitsin teksti."""
 
 import requests
-import json
+# import json
 
 url = "https://api.chucknorris.io/jokes/random"
 
