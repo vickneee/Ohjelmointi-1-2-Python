@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lentokenttätiedot</title>
+    <style>
+        /* CSS for the map */
+        #map {
+            height: 400px;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lentokenttähaku</h1>
+      <p>('EFHK', 'ENGM', 'EGLL',
+          'LFPG', 'LEMD', 'EDDB',
+          'LIRF', 'LPPT', 'EIDW',
+          'LOWW', 'LGAV', 'EBBR',
+          'ESSA', 'EPWA', 'LHBP',
+          'LROP', 'LKPR', 'LYBE',
+          'BIKF', 'LBSF', 'UKBB')</p>
+    <a href="/">Takasiin lentokenttähakuun</a><br><br>
+    <!-- HTML content to render map -->
+    <div id="map">
+        <!-- safe filter to render HTML content -->
+    {{ map_html | safe }}
+    </div>
+
+    <br>
+</body>
+</html>

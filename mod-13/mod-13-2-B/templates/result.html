@@ -14,31 +14,30 @@
 </head>
 <body>
     <h1>Lentokenttähaku</h1>
-      <p>('EFHK', 'ENGM', 'EGLL',
-          'LFPG', 'LEMD', 'EDDB',
-          'LIRF', 'LPPT', 'EIDW',
-          'LOWW', 'LGAV', 'EBBR',
-          'ESSA', 'EPWA', 'LHBP',
-          'LROP', 'LKPR', 'LYBE',
-          'BIKF', 'LBSF', 'UKBB')</p>
+    <a href="/all_airports">Katso kaikki lentokentät</a><br><br>
     {% if error %}
         <p style="color: red;">{{ error }}</p>
     {% endif %}
     <form method="POST">
         <label for="icao_code">Syötä ICAO-koodi:</label>
-        <input type="text" id="icao_code" name="icao_code" required>
+        <select id="icao_code" name="icao_code" required>
+            {% for code in icao_codes %}
+                <option value="{{ code }}">{{ code }}</option>
+            {% endfor %}
+        </select>
         <input type="submit" value="Hae">
     </form>
-    <h1>Lentokenttätiedot</h1>
-    <p>ICAO: {{ airport['ICAO'] }}</p>
-    <p> Lentokenttä: {{ airport['Name'] }}</p>
-    <p>Kaupunki: {{ airport['Municipality'] }}</p>
-    <!-- HTML content to render map -->
-    <div id="map">
-        <!-- safe filter to render HTML content -->
-    {{ airport['Map'] | safe }}
-    </div>
-
+    {% if airport %}
+        <h1>Lentokenttätiedot</h1>
+        <p>ICAO: {{ airport['ICAO'] }}</p>
+        <p>Lentokenttä: {{ airport['Name'] }}</p>
+        <p>Kaupunki: {{ airport['Municipality'] }}</p>
+        <!-- HTML content to render map -->
+        <div id="map">
+            <!-- safe filter to render HTML content -->
+            {{ airport['Map'] | safe }}
+        </div>
+    {% endif %}
     <br>
 </body>
 </html>
