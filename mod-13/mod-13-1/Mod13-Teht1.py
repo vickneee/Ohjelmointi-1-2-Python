@@ -4,7 +4,7 @@ http://127.0.0.1:3000/alkuluku/31. Vastauksen on oltava muodossa: {"Number":31, 
 
 # Import necessary libraries
 from flask import Flask, jsonify
-from flask import request
+# from flask import request
 
 # Create Flask app
 app = Flask(__name__)
