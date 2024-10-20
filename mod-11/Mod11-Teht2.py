@@ -6,8 +6,6 @@ kapasiteettinsa. Kirjoita pääohjelma, jossa luot yhden sähköauton (ABC-15, 1
 polttomoottoriauton (ACD-123, 165 km/h, 32.3 l). Aseta kummallekin autolle haluamasi nopeus, käske autoja ajamaan
 kolmen tunnin verran ja tulosta autojen matkamittarilukemat."""
 
-import random
-
 
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
