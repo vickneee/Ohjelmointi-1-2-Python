@@ -34,13 +34,15 @@ auto1 = Auto("ABC-123", 142)
 # Tulostetaan auton ominaisuudet (properties)
 print(f"Rekisteritunnus: {auto1.rekisteritunnus} \n"
       f"Huippunopeus: {auto1.huippunopeus} km/h \n"
-      f"Nopeus: {auto1.nopeus} \n"
-      f"Matka: {auto1.matka}")
+      f"Alkunopeus: {auto1.nopeus} \n"
+      f"Matka alussa: {auto1.matka}")
 
 # Kiihdytetään autoa 30 km/h
 auto1.kiihdyta(+30)
+# print(f"Auto nopeus: {auto1.nopeus}")
 # Kiihdytetään autoa vielä 70 km/h
 auto1.kiihdyta(+70)
+# print(f"Auto nopeus: {auto1.nopeus}")
 # Kiihdytetään autoa vielä 50 km/h
 auto1.kiihdyta(+50)
 # Tulostetaan nopeus (speed) 30 + 70 + 50 = 150 km/h
