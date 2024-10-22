@@ -6,35 +6,36 @@ hissit pohjakerrokseen. Jatka pääohjelmaa siten, että talossasi tulee palohä
 
 # Luodaan Hissi-luokka
 class Hissi:
+    # Uusi hissi on aina alimmassa kerroksessa
     def __init__(self, alin_kerros, ylin_kerros, hissin_nro):
-        self.alin_kerros = alin_kerros
-        self.ylin_kerros = ylin_kerros
+        self.nykyinen_kerros = alin_kerros
+        self.max_kerros = ylin_kerros
         self.hissin_nro = hissin_nro
 
-    # Metodi hissin siirtämiseksi haluttuun kerrokseen (functio)
-    def siirry_kerrokseen(self, kerros):
-        if kerros < self.alin_kerros:
-            while kerros < self.alin_kerros:
+    # Metodi hissin siirtämiseksi haluttuun kohdekerrokseen (functio)
+    def siirry_kerrokseen(self, kohde_kerros):
+        if kohde_kerros < self.nykyinen_kerros:
+            while kohde_kerros < self.nykyinen_kerros:
                 self.kerros_alas()
-        elif kerros > self.alin_kerros:
-            while kerros > self.alin_kerros:
+        elif kohde_kerros > self.nykyinen_kerros:
+            while kohde_kerros > self.nykyinen_kerros:
                 self.kerros_ylos()
 
-        print(f"# Hissi {self.hissin_nro} on nyt kerroksessa {self.alin_kerros} #")
+        print(f"# Hissi {self.hissin_nro} on nyt kerroksessa {self.nykyinen_kerros} #")
 
     # Metodi hissin siirtämiseksi ylöspäin (functio)
     def kerros_ylos(self):
-        if self.alin_kerros < self.ylin_kerros:
-            self.alin_kerros += 1
-            print(f"Hissi {self.hissin_nro} siirtyi kerrokseen {self.alin_kerros}")
+        if self.nykyinen_kerros < self.max_kerros:
+            self.nykyinen_kerros += 1
+            print(f"Hissi {self.hissin_nro} siirtyi kerrokseen {self.nykyinen_kerros}")
         else:
             print(f"Hissi {self.hissin_nro} on jo ylimmässä kerroksessa.")
 
     # Metodi hissin siirtämiseksi alaspäin (functio)
     def kerros_alas(self):
-        if self.alin_kerros > 1:
-            self.alin_kerros -= 1
-            print(f"Hissi {self.hissin_nro} siirtyi kerrokseen {self.alin_kerros}")
+        if self.nykyinen_kerros > 1:
+            self.nykyinen_kerros -= 1
+            print(f"Hissi {self.hissin_nro} siirtyi kerrokseen {self.nykyinen_kerros}")
         else:
             print(f"Hissi {self.hissin_nro} on jo alimmassa kerroksessa.")
 
@@ -42,8 +43,8 @@ class Hissi:
 # Luodaan Talo-luokka
 class Talo:
     def __init__(self, alin_kerros, ylin_kerros, hissien_lkm):
-        self.alin_kerros = alin_kerros
-        self.ylin_kerros = ylin_kerros
+        self.nykyinen_kerros = alin_kerros
+        self.max_kerros = ylin_kerros
         self.hissien_lkm = hissien_lkm
         # Luodaan tyhjä lista hisseille
         self.hissit = []
@@ -54,10 +55,10 @@ class Talo:
             # print(f"Luotiin hissi numero {hissi + 1} kerroksiin {alin_kerros} - {ylin_kerros}")
 
     # Metodi hissin ajamiseksi (functio)
-    def kayta_hissia(self, hissi_numero, kohdekerros):
+    def kayta_hissia(self, hissi_numero, kohde_kerros):
         if 0 < hissi_numero <= self.hissien_lkm:
             hissi = self.hissit[hissi_numero - 1]  # Hissi-numerot / indexit alkavat nollasta
-            hissi.siirry_kerrokseen(kohdekerros)
+            hissi.siirry_kerrokseen(kohde_kerros)
         else:
             print(f"Hissi numero {hissi_numero} ei ole olemassa.")
 
@@ -79,7 +80,7 @@ print()
 
 # Tulostetaan tarkastuksen vuoksi hissien kerrokset
 for mika_hissi in talo1.hissit:
-    print(f"Hissi {mika_hissi.hissin_nro} on kerroksessa {mika_hissi.alin_kerros}")
+    print(f"Hissi {mika_hissi.hissin_nro} on kerroksessa {mika_hissi.nykyinen_kerros}")
 
 # Kutsutaan palohälytystä
 talo1.palohalytys()
@@ -87,4 +88,4 @@ print()
 
 # Tulostetaan tarkastuksen vuoksi hissien kerrokset
 for mika_hissi in talo1.hissit:
-    print(f"Hissi {mika_hissi.hissin_nro} on kerroksessa {mika_hissi.alin_kerros}")
+    print(f"Hissi {mika_hissi.hissin_nro} on kerroksessa {mika_hissi.nykyinen_kerros}")
