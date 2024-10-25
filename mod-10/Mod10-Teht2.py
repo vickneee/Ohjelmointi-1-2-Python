@@ -1,4 +1,5 @@
-"""Jatka edellisen tehtävän ohjelmaa siten, että teet Talo-luokan. Talon alustajaparametreina annetaan alimman ja
+"""Jatka edellisen tehtävän ohjelmaa siten, että teet Talo-luokan.
+Talon alustajaparametreina annetaan alimman ja
 ylimmän kerroksen numero sekä hissien lukumäärä. Talon luonnin yhteydessä talo luo tarvittavan määrän hissejä.
 Hissien lista tallennetaan talon ominaisuutena. Kirjoita taloon metodi aja_hissiä, joka saa parametreinaan hissin
 numeron ja kohdekerroksen. Kirjoita pääohjelmaan lauseet talon luomiseksi ja talon hisseillä ajelemiseksi."""
@@ -47,10 +48,11 @@ class Talo:
         self.hissien_lkm = hissien_lkm
         # Luodaan tyhjä lista hisseille
         self.hissit = []
+        self.luo_hissit()
 
-        # Luodaan hissit
-        for i in range(hissien_lkm):
-            self.hissit.append(Hissi(alin_kerros, ylin_kerros))
+    def luo_hissit(self):  # Luodaan hissit
+        for i in range(self.hissien_lkm):
+            self.hissit.append(Hissi(self.nykyinen_kerros,self.max_kerros))
             # print(f"Luotiin hissi numero {i + 1} kerroksiin {alin_kerros} - {ylin_kerros}")
 
     # Metodi hissin ajamiseksi (functio)
@@ -66,11 +68,5 @@ class Talo:
 # Luodaan Talo-olio (object)
 talo1 = Talo(1, 7, 3)
 talo1.kayta_hissia(1, 5)
-print()
 talo1.kayta_hissia(2, 3)
-print()
 talo1.kayta_hissia(3, 7)
-print()
-
-for mika_hissi in talo1.hissit:
-    print(f"Hissi on kerroksessa {mika_hissi.nykyinen_kerros}")
