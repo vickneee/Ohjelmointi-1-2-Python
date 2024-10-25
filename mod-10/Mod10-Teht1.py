@@ -12,6 +12,7 @@ class Hissi:
     def __init__(self, alin_kerros, ylin_kerros):
         self.nykyinen_kerros = alin_kerros
         self.max_kerros = ylin_kerros
+        self.kerros = alin_kerros
 
     def kerros_ylos(self):
         if self.nykyinen_kerros < self.max_kerros:
