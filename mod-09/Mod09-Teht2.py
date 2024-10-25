@@ -16,16 +16,11 @@ class Auto:
 
     # Kiihdytä-metodi (funktio)
     def kiihdyta(self, muutos):
-        if muutos <= 0:
-            if self.nopeus + muutos <= 0:
-                self.nopeus = 0
-            else:
-                self.nopeus += muutos
-        else:
-            if self.nopeus + muutos >= self.huippunopeus:
-                self.nopeus = self.huippunopeus
-            else:
-                self.nopeus += muutos
+        self.nopeus += muutos
+        if self.nopeus + muutos < 0:
+            self.nopeus = 0
+        if self.nopeus + muutos > self.huippunopeus:
+            self.nopeus = self.huippunopeus
 
 
 # Luodaan auto-olio (object) Rekisteritunnuksella ABC-123 ja Huippunopeuksella 142 km/h
