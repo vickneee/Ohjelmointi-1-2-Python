@@ -13,12 +13,12 @@ class Auto:
         self.nopeus = 0
         self.matka = 0
 
+    def tulosta_auton_tiedot(self):
+        print(f"Auto: Rekisteritunnus: {self.rekisteritunnus}, Huippunopeus: {auto.huippunopeus}, "
+              f"Nopeus: {auto.nopeus}, Matka: {auto.matka}")
+
 
 # Luodaan auto-olio (object)
 auto = Auto("ABC-123", 142)
-
 # Tulostetaan auton ominaisuudet (properties)
-print(f"Rekisteritunnus: {auto.rekisteritunnus} \n"
-      f"Huippunopeus: {auto.huippunopeus} km/h \n"
-      f"Nopeus: {auto.nopeus} \n"
-      f"Matka: {auto.matka}")
+auto.tulosta_auton_tiedot()
