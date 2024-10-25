@@ -35,17 +35,17 @@ class Hissi:
         elif kohde_kerros > self.nykyinen_kerros:
             while kohde_kerros > self.nykyinen_kerros:
                 self.kerros_ylos()
+        self.tulosta_kerros()
+
+    def tulosta_kerros(self):
+        print(f"Hissi on nyt kerroksessa {self.nykyinen_kerros}")
 
 
 # Pääohjelma
 # Luodaan Hissi-olio (object) ja siirretään se kerrokseen 5
 hissi1 = Hissi(1, 7)
 hissi2 = Hissi(1, 3)
-print(hissi1.nykyinen_kerros)
 hissi1.siirry_kerrokseen(5)
-print(hissi1.nykyinen_kerros)
 hissi1.siirry_kerrokseen(1)
-print(hissi1.nykyinen_kerros)
 hissi1.siirry_kerrokseen(7)
-print(hissi1.nykyinen_kerros)
 hissi1.siirry_kerrokseen(4)
