@@ -2,8 +2,8 @@
 käyttäjältä paikkakunnan nimen ja tulostaa sitä vastaavan säätilan tekstin sekä lämpötilan Celsius-asteina. Perehdy
 rajapinnan dokumentaatioon riittävästi. Palveluun rekisteröityminen on tarpeen, jotta saat rajapintapyynnöissä
 tarvittavan API-avaimen (API key). Selvitä myös, miten saat Kelvin-asteet muunnettua Celsius-asteiksi."""
-from os import environ
 
+import os
 # Importoidaan tarvittavat kirjastot.
 import requests
 from dotenv import load_dotenv
@@ -15,7 +15,7 @@ load_dotenv()
 # OpenWeather API.
 url = "https://api.openweathermap.org/data/2.5/weather"
 # API key
-api_key = environ.get("API_KEY")
+api_key = os.getenv("API_KEY")
 
 # Kysytään käyttäjältä paikkakunnan nimi.
 city = input("Anna paikkakunnan nimi: ")
