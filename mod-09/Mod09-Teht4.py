@@ -34,29 +34,36 @@ class Auto:
 
 
 # Pääohjelma
-# Luodaan auto-olio (object) ja tulostetaan auton ominaisuudet (properties)
-auto_lista = []
-for i in range(10):
-    maxnopeus = (random.randint(100, 200))
-    auto_lista.append(Auto(f"ABC-{i+1}", maxnopeus))
-    # print(f"Auto {auto[i].rekisteritunnus} | Huippunopeus {auto[i].huippunopeus} km/h")
-
-# Kilpailu
-kilpailu = True
-while kilpailu:
+def luo_kilpailu_autot():
+    autot = []
     for i in range(10):
-        auto_lista[i].kiihdyta(random.randint(-10, 15))
-        auto_lista[i].auto_kuljee(1)
-        if auto_lista[i].matka >= 10000:
-            kilpailu = False
-            voittaja = auto_lista[i].rekisteritunnus
-            print(f"\nVoittaja on auto {voittaja} ja se on kulkenut {auto_lista[i].matka} km.")
-            break
+        maxnopeus = (random.randint(100, 200))
+        autot.append(Auto(f"ABC-{i + 1}", maxnopeus))
+        print(f"Auto: {autot[i].rekisteritunnus} | Huippunopeus {autot[i].huippunopeus} km/h")
+    return autot
 
-# Tulostetaan kilpailun tulokset
-print("Kilpailun tulokset: \n")
-print(f"{'Rek.tunnus':<10} | {'Huippunopeus':<14} | {'Nopeus':<10} | {'Matka':<10}")
-for i in range(10):
-    print(f"{auto_lista[i].rekisteritunnus:<10} | {auto_lista[i].huippunopeus} "
-          f"{'km/h':<10} | {auto_lista[i].nopeus} {'km/h':6} | {auto_lista[i].matka} "
-          f"km")
+
+def kilpailu():
+    autot = luo_kilpailu_autot()
+    kilpailu_kaynissa = True
+
+    while kilpailu_kaynissa:
+        for auto in autot:  # 10 kierrosta
+            auto.kiihdyta(random.randint(-10, 15))
+            auto.kulje(1)
+            if auto.matka >= 10000:
+                print(f"Voittaja: {auto.rekisteritunnus} ja se on kulkenut {auto.matka} km.")
+                kilpailu_kaynissa = False
+                break
+    return autot
+
+
+def tulosta_kilpailu_tulokset():
+    autot = kilpailu()
+    print("Kilpailun tulokset:")
+    print("Rek-tunnus | Huippunopeus | Nopeus | Matka")
+    for auto in autot:
+        print(f"{auto.rekisteritunnus:<10} | {auto.huippunopeus:<12} | {auto.nopeus:<6} | {auto.matka}")
+
+
+tulosta_kilpailu_tulokset()
