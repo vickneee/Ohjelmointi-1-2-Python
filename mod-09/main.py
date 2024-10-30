@@ -47,7 +47,7 @@ def tulosta_kilpailu_tulokset():
     print("Kilpailun tulokset:")
     print("Rek-tunnus | Huippunopeus | Nopeus | Matka")
     for auto in autot:
-        print(f"{auto.rekisteritunnus:>10} | {auto.huippunopeus:>12} | {auto.nopeus:>6} | {auto.matka}.")
+        print(f"{auto.rekisteritunnus:<10} | {auto.huippunopeus:<12} | {auto.nopeus:<6} | {auto.matka}")
 
 
 tulosta_kilpailu_tulokset()
