@@ -24,7 +24,7 @@ class Auto:
         self.nopeus = 0
         self.matka = 0
 
-    # Kiihdytä-metodi (funktio)
+    # Kiihdytä-metodi
     def kiihdyta(self, muutos):
         self.nopeus += muutos
         if self.nopeus + muutos < 0:
@@ -32,60 +32,63 @@ class Auto:
         if self.nopeus + muutos > self.huippunopeus:
             self.nopeus = self.huippunopeus
 
-    # Kuljee-metodi (funktio)
+    # Kuljee-metodi
     def auto_kuljee(self, tuntimaara):
         self.matka = self.nopeus * tuntimaara + self.matka
         return self.matka
 
 
 class Kilpailu:
-    def __init__(self, nimi, pituus_km, auto_lista):
+    def __init__(self, nimi, pituus_km, autojen_lkm):
         self.nimi = nimi
         self.pituus_km = pituus_km
-        self.autot_lista = auto_lista
+        self.autojen_lkm = autojen_lkm
+        self.kilpailu_autot = []
+        self.luo_kilpailu_autot()
+
+    def luo_kilpailu_autot(self):
+        for k_auto in range(self.autojen_lkm):
+            max_nopeus = (random.randint(100, 200))
+            self.kilpailu_autot.append(Auto(f"ABC-{k_auto + 1}", max_nopeus))
+            print(f"Auto: {self.kilpailu_autot[k_auto].rekisteritunnus} | Huippunopeus "
+                  f"{self.kilpailu_autot[k_auto].huippunopeus} "
+                  f"km/h")
 
     def tunti_kuluu(self):
-        for k_auto in self.autot_lista:
+        for k_auto in self.kilpailu_autot:
             k_auto.kiihdyta(random.randint(-10, 15))
             # print(f"Auto {k_auto.rekisteritunnus} | Nopeus {k_auto.nopeus} km/h")
             k_auto.auto_kuljee(1)
 
     def tulosta_tilanne(self):
         print(f"{'Rek.tunnus':<10} | {'Huippunopeus':<14} | {'Nopeus':<10} | {'Matka':<10}")
-        for k_auto in self.autot_lista:
+        for k_auto in self.kilpailu_autot:
             print(f"{k_auto.rekisteritunnus:<10} | {k_auto.huippunopeus} "
                   f"{'km/h':<10} | {k_auto.nopeus} {'km/h':6} | {k_auto.matka} "
                   f"km")
 
     def kilpailu_ohi(self):
-        for k_auto in self.autot_lista:
-            if k_auto.matka >= self.pituus_km:
-                return True
-        return False
+        kilpailu_ohi = False
+        tunti = 0
+        while not kilpailu_ohi:
+            kilpailu.tunti_kuluu()
+            tunti += 1
+            if tunti % 10 == 0:
+                print(f"Tilanne {tunti} tunnin jälkeen:")
+                self.tulosta_tilanne()
+            for k_auto in self.kilpailu_autot:
+                if k_auto.matka >= self.pituus_km:
+                    kilpailu_ohi = True
+                    break
+        print(f"Kilpailu on päättynyt {tunti} tunnin jälkeen.")
+        print(f"Kilpailun tulokset:")
+        self.tulosta_tilanne()
+        return True
 
 
 # Pääohjelma
-# Luodaan auto-olio (object) ja tulostetaan auton ominaisuudet (properties)
-autot_lista = []
-for i in range(10):
-    maxnopeus = (random.randint(100, 200))
-    autot_lista.append(Auto(f"ABC-{i + 1}", maxnopeus))
-
 # Luodaan kilpailu-olio (object)
-kilpailu = Kilpailu("Suuri romuralli", 8000, autot_lista)
+kilpailu = Kilpailu("Suuri romuralli", 8000, 10)
 
-# Kilpailu
-kilpailu_ohi = False
-tunti = 0
-while not kilpailu_ohi:
-    kilpailu.tunti_kuluu()
-    tunti += 1
-    if tunti % 10 == 0:
-        print(f"Tilanne {tunti} tunnin jälkeen:")
-        kilpailu.tulosta_tilanne()
-        kilpailu_ohi = kilpailu.kilpailu_ohi()
-    if kilpailu_ohi:
-        print(f"Kilpailu on päättynyt {tunti} tunnin jälkeen.")
-        print(f"Kilpailun tulokset:")
-        kilpailu.tulosta_tilanne()
-        break
+# Aloitetaan kilpailu ja tarkistetaan, onko kilpailu ohi
+kilpailu.kilpailu_ohi()

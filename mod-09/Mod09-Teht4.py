@@ -27,7 +27,7 @@ class Auto:
         if self.nopeus + muutos > self.huippunopeus:
             self.nopeus = self.huippunopeus
 
-    # Kulje-metodi
+    # Kuljee-metodi
     def auto_kuljee(self, tuntimaara):
         self.matka = self.nopeus * tuntimaara + self.matka
         return self.matka
