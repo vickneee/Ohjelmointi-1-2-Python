@@ -14,8 +14,11 @@ class Auto:
         self.matka = 0
 
     def tulosta_auton_tiedot(self):
-        print(f"Auto: Rekisteritunnus: {self.rekisteritunnus}, Huippunopeus: {auto.huippunopeus}, "
-              f"Nopeus: {auto.nopeus}, Matka: {auto.matka}")
+        print(f"Auton tiedot: \n"
+              f"Rekisteritunnus: {self.rekisteritunnus},\n"
+              f"Huippunopeus: {auto.huippunopeus},\n"
+              f"Nopeus: {auto.nopeus},\n"
+              f"Matka: {auto.matka}")
 
 
 # Luodaan auto-olio (object)
