@@ -15,19 +15,14 @@ class Auto:
         self.matka = 0
 
     def kiihdyta(self, muutos):
-        if muutos < 0:
-            if self.nopeus + muutos < 0:
-                self.nopeus = 0
-            else:
-                self.nopeus += muutos
-        else:
-            if self.nopeus + muutos > self.huippunopeus:
-                self.nopeus = self.huippunopeus
-            else:
-                self.nopeus += muutos
+        self.nopeus += muutos
+        if self.nopeus + muutos < 0:
+            self.nopeus = 0
+        if self.nopeus + muutos > self.huippunopeus:
+            self.nopeus = self.huippunopeus
 
     def kuljee(self, tuntimaara):
-        self.matka = self.nopeus * tuntimaara + self.matka
+        self.matka += self.nopeus * tuntimaara
         return self.matka
 
 
@@ -45,11 +40,6 @@ class PolttoMoottoriAuto(Auto):
         pass
 
 
-# sähköauton (ABC-15, 180 km/h, 52.5 kWh)
-# polttomoottoriauton (ACD-123, 165 km/h, 32.3 l).
-# Aseta kummallekin autolle haluamasi nopeus, käske autoja ajamaan
-# kolmen tunnin verran ja tulosta autojen matkamittarilukemat.
-
 # Pääohjelma
 sahkoauto = SahkoAuto("ABC-15", 180, 52.5)
 polttomoottoriauto = PolttoMoottoriAuto("ACD-123", 165, 32.3)
@@ -58,8 +48,10 @@ polttomoottoriauto = PolttoMoottoriAuto("ACD-123", 165, 32.3)
 sahkoauto.nopeus = 90
 polttomoottoriauto.nopeus = 95
 
+# Käske autoja ajamaan kolmen tunnin verran
 sahkoauto.kuljee(3)
 polttomoottoriauto.kuljee(3)
 
+# Tulosta autojen matkamittarilukemat
 print(f"Sähköauton matka: {sahkoauto.matka} km")
 print(f"Polttomoottoriauton matka: {polttomoottoriauto.matka} km")
