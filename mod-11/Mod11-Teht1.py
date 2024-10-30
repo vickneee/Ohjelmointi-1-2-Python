@@ -12,7 +12,7 @@ class Julkaisu:
 
     # Tulostaa luokan tiedot
     def tulosta_tiedot(self):
-        print(f"Julkaisun nimi: {self.nimi}")
+        print(f"{self.nimi}")
 
 
 # Luokka Kirja
@@ -25,7 +25,7 @@ class Kirja(Julkaisu):
     # Tulostaa luokan tiedot
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f"Kirjan kirjailija: {self.kirjoittaja} ja sivujen määrä on {self.sivujen_maara}.")
+        print(f"(kirjailija {self.kirjoittaja}, {self.sivujen_maara} sivua).")
 
 
 # Luokka Lehti
@@ -37,14 +37,18 @@ class Lehti(Julkaisu):
     # Tulostaa luokan tiedot
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f"Lehden päätoimittaja on {self.paatoimittaja}.")
+        print(f"(päätoimittaja {self.paatoimittaja}).")
 
 
 # Aku Ankka (päätoimittaja Aki Hyyppä) ja Hytti n:o 6 (kirjailija Rosa Liksom, 200 sivua).
 # Pääohjelma
-julkaisut = []
-julkaisut.append(Kirja("Hytti n:o 6", "Rosa Liksom", 200))
-julkaisut.append(Lehti("Aku Ankka", "Aki Hyyppä"))
+def main():
+    julkaisut = []
+    julkaisut.append(Kirja("Hytti n:o 6", "Rosa Liksom", 200))
+    julkaisut.append(Lehti("Aku Ankka", "Aki Hyyppä"))
 
-for j in julkaisut:
-    j.tulosta_tiedot()
+    for julkaisu in julkaisut:
+        julkaisu.tulosta_tiedot()
+
+
+main()
