@@ -19,7 +19,7 @@ class Auto:
         self.nopeus = 0
         self.matka = 0
 
-    # Kiihdytä-metodi (funktio)
+    # Kiihdytä-metodi
     def kiihdyta(self, muutos):
         self.nopeus += muutos
         if self.nopeus + muutos < 0:
@@ -27,7 +27,7 @@ class Auto:
         if self.nopeus + muutos > self.huippunopeus:
             self.nopeus = self.huippunopeus
 
-    # Kulje-metodi (funktio)
+    # Kulje-metodi
     def auto_kuljee(self, tuntimaara):
         self.matka = self.nopeus * tuntimaara + self.matka
         return self.matka
@@ -50,7 +50,7 @@ def kilpailu():
     while kilpailu_kaynissa:
         for auto in autot:  # 10 kierrosta
             auto.kiihdyta(random.randint(-10, 15))
-            auto.kulje(1)
+            auto.auto_kuljee(1)
             if auto.matka >= 10000:
                 print(f"Voittaja: {auto.rekisteritunnus} ja se on kulkenut {auto.matka} km.")
                 kilpailu_kaynissa = False
