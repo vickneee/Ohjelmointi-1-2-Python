@@ -12,7 +12,7 @@ class Auto:
         self.nopeus = 0
         self.matka = 2000  # Alustetaan matka 2000 km kohdalta
 
-    # Kiihdytä-metodi (funktio)
+    # Kiihdytä-metodi
     def kiihdyta(self, muutos):
         self.nopeus += muutos
         if self.nopeus + muutos < 0:
@@ -20,20 +20,25 @@ class Auto:
         if self.nopeus + muutos > self.huippunopeus:
             self.nopeus = self.huippunopeus
 
-    # Kulje-metodi (funktio)
+    # Kulje-metodi
     def kulje(self, tuntimaara):
         self.matka = self.nopeus * tuntimaara + self.matka
         return self.matka
+
+    # Tulosta auton tiedot-metodi
+    def tulosta_auton_tiedot(self):
+        print(f"Auton tiedot: \n"
+              f"Rekisteritunnus: {self.rekisteritunnus},\n"
+              f"Huippunopeus: {auto.huippunopeus},\n"
+              f"Nopeus: {auto.nopeus},\n"
+              f"Matka: {auto.matka}")
 
 
 # Luodaan auto-olio (object) Rekisteritunnuksella ABC-123 ja Huippunopeuksella 142 km/h
 auto = Auto("ABC-123", 142)
 
 # Tulostetaan auton ominaisuudet (properties)
-print(f"Rekisteritunnus: {auto.rekisteritunnus} \n"
-      f"Huippunopeus: {auto.huippunopeus} km/h \n"
-      f"Alkunopeus: {auto.nopeus} \n"
-      f"Matka: {auto.matka}")
+auto.tulosta_auton_tiedot()
 
 # Kiihdytetään autoa ja tulostetaan nopeus (speed)
 auto.kiihdyta(60)
