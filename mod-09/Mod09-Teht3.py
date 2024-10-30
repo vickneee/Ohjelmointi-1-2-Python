@@ -29,9 +29,9 @@ class Auto:
     def tulosta_auton_tiedot(self):
         print(f"Auton tiedot: \n"
               f"Rekisteritunnus: {self.rekisteritunnus},\n"
-              f"Huippunopeus: {auto.huippunopeus},\n"
-              f"Nopeus: {auto.nopeus},\n"
-              f"Matka: {auto.matka}")
+              f"Huippunopeus: {self.huippunopeus},\n"
+              f"Nopeus: {self.nopeus},\n"
+              f"Matka: {self.matka}")
 
 
 # Luodaan auto-olio (object) Rekisteritunnuksella ABC-123 ja Huippunopeuksella 142 km/h
