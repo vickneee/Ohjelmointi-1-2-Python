@@ -25,6 +25,9 @@ class Auto:
         self.matka += self.nopeus * tuntimaara
         return self.matka
 
+    def tulosta_matkamittarilukema(self):
+        print(f"Matkamittarilukema: ")
+
 
 class SahkoAuto(Auto):
     def __init__(self, rekisteritunnus, huippunopeus, akkukapasiteetti):
@@ -32,12 +35,20 @@ class SahkoAuto(Auto):
         super().__init__(rekisteritunnus, huippunopeus)
         pass
 
+    def tulosta_matkamittarilukema(self):
+        super().tulosta_matkamittarilukema()
+        print(f"Sähköauto: {self.matka}")
+
 
 class PolttoMoottoriAuto(Auto):
     def __init__(self, rekisteritunnus, huippunopeus, bensatankin_koko):
         self.bensatankin_koko = bensatankin_koko
         super().__init__(rekisteritunnus, huippunopeus)
         pass
+
+    def tulosta_matkamittarilukema(self):
+        super().tulosta_matkamittarilukema()
+        print(f"Polttomoottoriauto: {self.matka}")
 
 
 # Pääohjelma
@@ -53,5 +64,5 @@ sahkoauto.kuljee(3)
 polttomoottoriauto.kuljee(3)
 
 # Tulosta autojen matkamittarilukemat
-print(f"Sähköauton matka: {sahkoauto.matka} km")
-print(f"Polttomoottoriauton matka: {polttomoottoriauto.matka} km")
+sahkoauto.tulosta_matkamittarilukema()
+polttomoottoriauto.tulosta_matkamittarilukema()
