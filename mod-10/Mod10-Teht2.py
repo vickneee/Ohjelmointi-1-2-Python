@@ -12,7 +12,7 @@ class Hissi:
         self.nykyinen_kerros = alin_kerros
         self.max_kerros = ylin_kerros
 
-    # Metodi hissin siirtämiseksi haluttuun kerrokseen (functio)
+    # Metodi hissin siirtämiseksi haluttuun kerrokseen
     def siirry_kerrokseen(self, kohde_kerros):
         if kohde_kerros < self.nykyinen_kerros:
             while kohde_kerros < self.nykyinen_kerros:
@@ -23,7 +23,7 @@ class Hissi:
 
         print(f"# Hissi on kerroksessa {self.nykyinen_kerros} #")
 
-    # Metodi hissin siirtämiseksi ylöspäin (functio)
+    # Metodi hissin siirtämiseksi ylöspäin
     def kerros_ylos(self):
         if self.nykyinen_kerros < self.max_kerros:
             self.nykyinen_kerros += 1
@@ -31,7 +31,7 @@ class Hissi:
         else:
             print(f"Hissi on jo ylimmässä kerroksessa.")
 
-    # Metodi hissin siirtämiseksi alaspäin (functio)
+    # Metodi hissin siirtämiseksi alaspäin
     def kerros_alas(self):
         if self.nykyinen_kerros > 1:
             self.nykyinen_kerros -= 1
@@ -50,12 +50,13 @@ class Talo:
         self.hissit = []
         self.luo_hissit()
 
+    # Metodi hissien luomiseksi
     def luo_hissit(self):  # Luodaan hissit
         for i in range(self.hissien_lkm):
             self.hissit.append(Hissi(self.nykyinen_kerros,self.max_kerros))
             # print(f"Luotiin hissi numero {i + 1} kerroksiin {alin_kerros} - {ylin_kerros}")
 
-    # Metodi hissin ajamiseksi (functio)
+    # Metodi hissin ajamiseksi
     def kayta_hissia(self, hissi_numero, kohdekerros):
         if 0 < hissi_numero <= self.hissien_lkm:
             hissi = self.hissit[hissi_numero - 1]  # Hissi-numerot / indexit alkavat nollasta
