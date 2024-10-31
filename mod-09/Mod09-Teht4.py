@@ -29,7 +29,7 @@ class Auto:
 
     # Kuljee-metodi
     def auto_kuljee(self, tuntimaara):
-        self.matka = self.nopeus * tuntimaara + self.matka
+        self.matka += self.nopeus * tuntimaara
         return self.matka
 
 
