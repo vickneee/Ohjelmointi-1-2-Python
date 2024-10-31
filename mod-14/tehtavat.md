@@ -164,7 +164,6 @@ s1.plot()
 
 class Tyontekija:
     tyontekijoiden_lkm = 0  # staattinen luokkamuuttuja
-
     def __init__(self, etunimi, sukunimi):
         Tyontekija.tyontekijoiden_lkm += 1  # kasvatetaan luokkamuuttujaa
         self.tyontekijanumero = Tyontekija.tyontekijoiden_lkm  
@@ -182,22 +181,16 @@ class Tuntipalkkainen(Tyontekija):
 
     def tulosta_tiedot(self): 
         super().tulosta_tiedot()  # kutsutaan yliluokan metodia. 
-        # Metodi ylikirjoittaa yliluokan metodia
-        print(f" Tuntipalkka: {self.tuntipalkka}")  
-        # lisätään tuntipalkka
-
+        print(f" Tuntipalkka: {self.tuntipalkka}")  # lisätään tuntipalkka
 
 class Kuukausipalkkainen(Tyontekija):
     def __init__(self, etunimi, sukunimi, kuukausipalkka):
         super().__init__(etunimi, sukunimi)  # kutsutaan yliluokan konstruktoria 
-        self.kuukausipalkka = kuukausipalkka  
-        # lisätään kuukausipalkka
+        self.kuukausipalkka = kuukausipalkka  # lisätään kuukausipalkka
 
     def tulosta_tiedot(self):  
         super().tulosta_tiedot()  # kutsutaan yliluokan metodia. 
-        # Metodi ylikirjoittaa yliluokan metodia
-        print(f" Kuukausipalkka: {self.kuukausipalkka}")  
-        # lisätään kuukausipalkka
+        print(f" Kuukausipalkka: {self.kuukausipalkka}")  # lisätään kuukausipalkka
 
 # Pääohjelma
 def kaikki_tyontekijat():
