@@ -1,6 +1,6 @@
-# Pysyvä assisiaatio
+## Pysyvä assisiaatio
 
-# Koira ja hoitola
+### Koira ja hoitola
 
 ```python
 class Koira:
@@ -56,9 +56,9 @@ print("-- tervehdys --")
 hoitola.tervehdi_koiria()
 ```
 
-# Tilapäinen assosiaatio
+## Tilapäinen assosiaatio
 
-# Auto ja maalaamo
+### Auto ja maalaamo
 
 ```python
 class Auto:
@@ -77,7 +77,7 @@ maalaamo.maalaa(auto, "punainen")
 print("Auto on nyt " + auto.väri)
 ```
 
-# Asiakas ja tuote sekä tilaus
+### Asiakas ja tuote sekä tilaus
 
 ```python
 class Asiakas:
@@ -100,9 +100,9 @@ tuote1 = Tuote("Kahvikuppi", 4.5)
 asiakas1.tee_tilaus(tuote1)
 ```
 
-# Staattinen luokkamuuttuja
+## Staattinen luokkamuuttuja
 
-# Tili ja maksu sekä saldo
+## Tili ja maksu sekä saldo
 
 ```python
 class Tili:
@@ -145,9 +145,9 @@ t2.maksa(25)
 t2.tulostus()
 ```
 
-# Periytyminen
+## Periytyminen
 
-# Henkilö ja opiskelija
+### Henkilö ja opiskelija
 
 ```python
 class Person:
@@ -175,7 +175,7 @@ p1.plot()
 s1.plot()
 ```
 
-# Työntekijä ja tuntipalkkainen sekä kuukausipalkkainen
+## Työntekijä ja tuntipalkkainen sekä kuukausipalkkainen
 
 ```python
 class Tyontekija:
@@ -226,9 +226,9 @@ def kaikki_tyontekijat():
 kaikki_tyontekijat()
 ```
 
-# Moniperintä
+## Moniperintä
 
-# Kulkuneuvo ja urheiluväline sekä polkupyörä
+### Kulkuneuvo ja urheiluväline sekä polkupyörä
 
 ```python
 class Kulkuneuvo:  # luokka Kulkuneuvo
@@ -251,7 +251,9 @@ print (pp.nopeus)
 print (pp.paino)
 ```
 
-# Rajapinta ja Flask
+## Rajapinta ja Flask
+
+# Rajapinta
 
 ```python
 import json
@@ -272,6 +274,8 @@ try:
 except requests.exceptions.RequestException as e:  # virheenkäsittely jos pyyntö ei onnistu
     print ("Hakua ei voitu suorittaa.")
 ```
+
+### Rajapinta
 
 ```python
 import requests
@@ -299,7 +303,7 @@ for a in vastaus:
     print(a["show"]["name"])  # tulostetaan ohjelman nimi
 ```
 
-# Pääpiste ja Flask
+# Päätepiste (Endpoint) ja Flask
 
 ```python
 from flask import Flask, Response
@@ -324,6 +328,8 @@ def summa(luku1, luku2):
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=3000)
 ```
+
+### Päätepiste (Endpoint) ja Flask
 
 ```python
 from flask import Flask, request
