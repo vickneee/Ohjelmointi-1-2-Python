@@ -33,7 +33,6 @@ class SahkoAuto(Auto):
     def __init__(self, rekisteritunnus, huippunopeus, akkukapasiteetti):
         self.akkukapasiteetti = akkukapasiteetti
         super().__init__(rekisteritunnus, huippunopeus)
-        pass
 
     def tulosta_matkamittarilukema(self):
         super().tulosta_matkamittarilukema()
@@ -44,7 +43,6 @@ class PolttoMoottoriAuto(Auto):
     def __init__(self, rekisteritunnus, huippunopeus, bensatankin_koko):
         self.bensatankin_koko = bensatankin_koko
         super().__init__(rekisteritunnus, huippunopeus)
-        pass
 
     def tulosta_matkamittarilukema(self):
         super().tulosta_matkamittarilukema()
