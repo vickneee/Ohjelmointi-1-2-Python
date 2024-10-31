@@ -1,41 +1,49 @@
-## Pysyvä assisiaatio
-
-### Koira ja hoitola
-
 ```python
+# Pysyvä assisiaatio
+# Koira ja hoitola
+
 class Koira:
 
-    koirien_lkm = 0  # staattinen luokkamuuttuja
+    koirien_lkm = 0  
+    # staattinen luokkamuuttuja
 
     def __init__(self, nimi, syntymavuosi, haukahdus="Vuh-vuh"):
         self.nimi = nimi
         self.syntymavuosi = syntymavuosi
         self.haukahdus = haukahdus
-        Koira.koirien_lkm += 1  # kasvatetaan luokkamuuttujaa
-        print(f"Koiria luotu: {Koira.koirien_lkm} kpl")  # tulostetaan luokkamuuttuja
+        Koira.koirien_lkm += 1  
+        # kasvatetaan luokkamuuttujaa
+        print(f"Koiria luotu: {Koira.koirien_lkm} kpl")  
+        # tulostetaan luokkamuuttuja
 
     def hauku(self, kerrat):
-        for i in range(kerrat):  # toistetaan kerrat kertaa
+        for i in range(kerrat):  
+            # toistetaan kerrat kertaa
             print(f"{self.nimi} haukuu {self.haukahdus}")
 
     def ika(self):
-        return 2024 - self.syntymavuosi  # palautetaan koiran ikä
+        return 2024 - self.syntymavuosi  
+        # palautetaan koiran ikä
 
 
 class Hoitola:
     def __init__(self):
-        self.koirat = []  # luodaan lista koirille hoitolassa, pysyvä assosiaatio
+        self.koirat = []  
+        # luodaan lista koirille hoitolassa, pysyvä assosiaatio
 
     def koira_sisaan(self, koira):
-        self.koirat.append(koira)  # lisätään koira listaan
+        self.koirat.append(koira)  
+        # lisätään koira listaan
         print(f"{koira.nimi} kirjattu sisään")
 
     def koira_ulos(self, koira):
-        self.koirat.remove(koira)  # poistetaan koira listasta
+        self.koirat.remove(koira)  
+        # poistetaan koira listasta
         print(f"{koira.nimi} kirjattu ulos")
 
     def tervehdi_koiria(self):
-        for koira in self.koirat:  # käydään kaikki koirat läpi
+        for koira in self.koirat:  
+            # käydään kaikki koirat läpi
             koira.hauku(1)
 
 
@@ -56,18 +64,19 @@ print("-- tervehdys --")
 hoitola.tervehdi_koiria()
 ```
 
-## Tilapäinen assosiaatio
-
-### Auto ja maalaamo
-
 ```python
+# Tilapäinen assosiaatio
+
+# Auto ja maalaamo
+
 class Auto:
     def __init__(self, rekisteritunnus, väri):
         self.rekisteritunnus = rekisteritunnus
         self.väri = väri
 
 class Maalaamo:
-    def maalaa(self, auto, väri):  # metodi muuttaa auton väriä
+    def maalaa(self, auto, väri):  
+        # metodi muuttaa auton väriä
         auto.väri = väri  # muutetaan auton väriä
 
 maalaamo = Maalaamo()
@@ -77,9 +86,9 @@ maalaamo.maalaa(auto, "punainen")
 print("Auto on nyt " + auto.väri)
 ```
 
-### Asiakas ja tuote sekä tilaus
-
 ```python
+# Asiakas ja tuote sekä tilaus
+
 class Asiakas:
     def __init__(self, nimi):
         self.nimi = nimi
@@ -100,20 +109,22 @@ tuote1 = Tuote("Kahvikuppi", 4.5)
 asiakas1.tee_tilaus(tuote1)
 ```
 
-## Staattinen luokkamuuttuja
-
-## Tili ja maksu sekä saldo
-
 ```python
+# Staattinen luokkamuuttuja
+
+# Tili ja maksu sekä saldo
+
 class Tili:
 
     lkm = 0  # staattinen luokkamuuttuja
 
-    def __init__(self, omistaja, saldo=0):  # oletussaldo on 0
+    def __init__(self, omistaja, saldo=0):  
+        # oletussaldo on 0
         self.omistaja = omistaja
         self.saldo = saldo
         Tili.lkm += 1  # kasvatetaan luokkamuuttujaa
-        print(f"Tilejä luotu: {Tili.lkm}")  # tulostetaan luokkamuuttuja
+        print(f"Tilejä luotu: {Tili.lkm}")  
+        # tulostetaan luokkamuuttuja
 
     def maksa(self, amount):
         if self.saldo >= amount:  # jos rahaa on tarpeeksi
@@ -145,28 +156,31 @@ t2.maksa(25)
 t2.tulostus()
 ```
 
-## Periytyminen
-
-### Henkilö ja opiskelija
-
 ```python
+# Periytyminen
+
+# Henkilö ja opiskelija
+
 class Person:
     def __init__(self, firstname, lastname):
         self.firstname = firstname
         self.lastname = lastname
 
     def plot(self):  # metodi tulostaa nimen
-        print(f"-- My name is {self.firstname} {self.lastname}")  # tulostetaan nimi
+        print(f"-- My name is {self.firstname} {self.lastname}")  
+        # tulostetaan nimi
 
 
 class Student(Person):  # Student perii Person-luokan
     def __init__(self, firstname, lastname, student_nr):
-        super().__init__(firstname, lastname)  # kutsutaan yliluokan konstruktoria
+        super().__init__(firstname, lastname)  
+        # kutsutaan yliluokan konstruktoria
         self.student_nr = student_nr  # lisätään opiskelijanumero
 
     def plot(self):  # metodi tulostaa nimen ja opiskelijanumeron
         super().plot()  # kutsutaan yliluokan metodia
-        print(f"and my student number is {self.student_nr}")  #
+        print(f"and my student number is {self.student_nr}")  
+        # tulostetaan lisäksi opiskelijanumero
 
 
 p1 = Person("James", "Bond")
@@ -175,15 +189,18 @@ p1.plot()
 s1.plot()
 ```
 
-## Työntekijä ja tuntipalkkainen sekä kuukausipalkkainen
-
 ```python
+# Työntekijä ja tuntipalkkainen sekä kuukausipalkkainen
+
 class Tyontekija:
-    tyontekijoiden_lkm = 0  # staattinen luokkamuuttuja
+    tyontekijoiden_lkm = 0  
+    # staattinen luokkamuuttuja
 
     def __init__(self, etunimi, sukunimi):
-        Tyontekija.tyontekijoiden_lkm += 1  # kasvatetaan luokkamuuttujaa
-        self.tyontekijanumero = Tyontekija.tyontekijoiden_lkm  # annetaan työntekijänumeroksi luokkamuuttujan arvo
+        Tyontekija.tyontekijoiden_lkm += 1  
+        # kasvatetaan luokkamuuttujaa
+        self.tyontekijanumero = Tyontekija.tyontekijoiden_lkm  
+        # annetaan työntekijänumeroksi luokkamuuttujan arvo
         self.etunimi = etunimi
         self.sukunimi = sukunimi
 
@@ -196,19 +213,27 @@ class Tuntipalkkainen(Tyontekija):
         super().__init__(etunimi, sukunimi)
         self.tuntipalkka = tuntipalkka
 
-    def tulosta_tiedot(self):  # tulostetaan tuntipalkkaisen työntekijän tiedot
-        super().tulosta_tiedot()  # kutsutaan yliluokan metodia Metodi ylikirjoittaa yliluokan metodia
-        print(f" Tuntipalkka: {self.tuntipalkka}")  # lisätään tuntipalkka
+    def tulosta_tiedot(self): 
+        super().tulosta_tiedot()  
+        # kutsutaan yliluokan metodia. 
+        # Metodi ylikirjoittaa yliluokan metodia
+        print(f" Tuntipalkka: {self.tuntipalkka}")  
+        # lisätään tuntipalkka
 
 
 class Kuukausipalkkainen(Tyontekija):
     def __init__(self, etunimi, sukunimi, kuukausipalkka):
-        super().__init__(etunimi, sukunimi)  # kutsutaan yliluokan konstruktoria 
-        self.kuukausipalkka = kuukausipalkka  # lisätään kuukausipalkka
+        super().__init__(etunimi, sukunimi)  
+        # kutsutaan yliluokan konstruktoria 
+        self.kuukausipalkka = kuukausipalkka  
+        # lisätään kuukausipalkka
 
-    def tulosta_tiedot(self):  # tulostetaan kuukausipalkkaisen työntekijän tiedot
-        super().tulosta_tiedot()  # kutsutaan yliluokan metodia. Metodi ylikirjoittaa yliluokan metodia
-        print(f" Kuukausipalkka: {self.kuukausipalkka}")  # lisätään kuukausipalkka
+    def tulosta_tiedot(self):  
+        super().tulosta_tiedot()  
+        # kutsutaan yliluokan metodia. 
+        # Metodi ylikirjoittaa yliluokan metodia
+        print(f" Kuukausipalkka: {self.kuukausipalkka}")  
+        # lisätään kuukausipalkka
 
 
 # Pääohjelma
@@ -226,11 +251,11 @@ def kaikki_tyontekijat():
 kaikki_tyontekijat()
 ```
 
-## Moniperintä
-
-### Kulkuneuvo ja urheiluväline sekä polkupyörä
-
 ```python
+## Moniperintä
+# Kulkuneuvo ja urheiluväline sekä polkupyörä
+
+
 class Kulkuneuvo:  # luokka Kulkuneuvo
     def __init__(self, nopeus):
         self.nopeus = nopeus
@@ -239,10 +264,14 @@ class Urheiluväline:  # luokka Urheiluväline
     def __init__(self, paino):
         self.paino = paino
 
-class Polkupyörä(Kulkuneuvo, Urheiluväline):  # luokka Polkupyörä perii Kulkuneuvo ja Urheiluväline -luokat
-    def __init__(self, nopeus, paino, vaihteet):  # konstruktori
-        Kulkuneuvo.__init__(self, nopeus)  # kutsutaan yliluokkien konstruktoreita
-        Urheiluväline.__init__(self, paino)  # kutsutaan yliluokkien konstruktoreita
+class Polkupyörä(Kulkuneuvo, Urheiluväline):  
+    # luokka Polkupyörä perii Kulkuneuvo ja Urheiluväline -luokat
+    def __init__(self, nopeus, paino, vaihteet):  
+        # konstruktori
+        Kulkuneuvo.__init__(self, nopeus)  
+        # kutsutaan yliluokkien konstruktoreita
+        Urheiluväline.__init__(self, paino)  
+        # kutsutaan yliluokkien konstruktoreita
         self.vaihteet = vaihteet  # lisätään vaihteet
 
 pp = Polkupyörä(45, 18.7, 3)
@@ -251,67 +280,73 @@ print (pp.nopeus)
 print (pp.paino)
 ```
 
-## Rajapinta ja Flask
-
-# Rajapinta
-
 ```python
+# Rajapinta ja Flask
+
 import json
 import requests
 
 hakusana = input("Anna hakusana: ")  # kysytään hakusana
 
 # Pyynnön malli: https://api.tvmaze.com/search/shows?q=girls
-pyyntö = "https://api.tvmaze.com/search/shows?q=" + hakusana  # luodaan pyyntö
+pyyntö = "https://api.tvmaze.com/search/shows?q=" + hakusana  
+# luodaan pyyntö
 
 try:
     vastaus = requests.get(pyyntö)
     if vastaus.status_code==200:  # jos vastaus onnistui
-        json_vastaus = vastaus.json()  # muutetaan vastaus json-muotoon
-        print(json.dumps(json_vastaus, indent=2))  # tulostetaan vastaus json-muodossa
+        json_vastaus = vastaus.json()  
+        # muutetaan vastaus json-muotoon
+        print(json.dumps(json_vastaus, indent=2))  
+        # tulostetaan vastaus json-muodossa
         for a in json_vastaus:
             print(a["show"]["name"])
-except requests.exceptions.RequestException as e:  # virheenkäsittely jos pyyntö ei onnistu
+except requests.exceptions.RequestException as e:  
+    # virheenkäsittely jos pyyntö ei onnistu
     print ("Hakua ei voitu suorittaa.")
 ```
 
-### Rajapinta
-
 ```python
+# Rajapinta
+
 import requests
 import json
 
 hakusana = input("Anna hakusana: ")  # kysytään hakusana
 
 # Pyynnön malli: https://api.tvmaze.com/search/shows?q=girls
-pyynto = "https://api.tvmaze.com/search/shows?q=" + hakusana  # luodaan pyyntö
-vastaus = requests.get(pyynto).json()  # tehdään pyyntö ja muutetaan vastaus json-muotoon
+pyynto = "https://api.tvmaze.com/search/shows?q=" + hakusana  
+vastaus = requests.get(pyynto).json()  
+# tehdään pyyntö ja muutetaan vastaus json-muotoon
 print(vastaus)  # tulostetaan vastaus json-muodossa
 
 
 hakusana = input("Anna hakusana: ")  # kysytään hakusana
 
-respond = requests.get(f"https://api.tvmaze.com/search/shows?q={hakusana}")  # tehdään pyyntö
+respond = requests.get(f"https://api.tvmaze.com/search/shows?q={hakusana}")  
+# tehdään pyyntö
 respond = respond.json()  # muutetaan vastaus json-muotoon
 print(respond)
 
 # Tulostetaan vastauksen rakenne
-print(json.dumps(vastaus, indent=2))  # tulostetaan vastaus json-muodossa
+print(json.dumps(vastaus, indent=2))  
+# tulostetaan vastaus json-muodossa
 
 # Tulostetaan vastauksen sisältö
 for a in vastaus:
     print(a["show"]["name"])  # tulostetaan ohjelman nimi
 ```
 
+```python
 # Päätepiste (Endpoint) ja Flask
 
-```python
 from flask import Flask, Response
 import json
 
 app = Flask(__name__)  # luodaan Flask-olio
 
-@app.route('/summa/<luku1>/<luku2>')  # määritellään reitti
+@app.route('/summa/<luku1>/<luku2>')  
+# määritellään reitti
 def summa(luku1, luku2):
         luku1 = float(luku1)
         luku2 = float(luku2)
@@ -329,18 +364,21 @@ if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=3000)
 ```
 
-### Päätepiste (Endpoint) ja Flask
-
 ```python
+# Päätepiste (Endpoint) ja Flask 
+
 from flask import Flask, request
 
 app = Flask(__name__)  # luodaan Flask-olio
 
-   # 127.0.0.1:3000/summa?luku1=3&luku2=4  # esimerkki pyynnöstä &-merkillä erotetut parametrit
+# 127.0.0.1:3000/summa?luku1=3&luku2=4  
+# esimerkki pyynnöstä &-merkillä erotetut parametrit
 
-@app.route('/summa')  # määritellään reitti
+@app.route('/summa')  
+# määritellään reitti
 def summa():
-    args = request.args  # pyyntö parametrit args -sanakirjassa
+    args = request.args  
+    # pyyntö parametrit args -sanakirjassa
     luku1 = float(args.get("luku1"))
     luku2 = float(args.get("luku2"))
     summa = luku1 + luku2
