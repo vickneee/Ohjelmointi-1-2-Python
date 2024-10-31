@@ -1,6 +1,5 @@
 ```python
-# Pysyvä assisiaatio 
-# Koira ja hoitola
+# Pysyvä assisiaatio # Koira ja hoitola
 
 class Koira:
     koirien_lkm = 0  # staattinen luokkamuuttuja
@@ -44,8 +43,7 @@ hoitola.tervehdi_koiria()
 ```
 
 ```python
-# Tilapäinen assosiaatio
-# Auto ja maalaamo
+# Tilapäinen assosiaatio # Auto ja maalaamo
 
 class Auto:
     def __init__(self, rekisteritunnus, väri):
@@ -66,8 +64,7 @@ print("Auto on nyt " + auto.väri)
 ```
 
 ```python
-# Tilapäinen assosiaatio 
-# Asiakas ja tuote sekä tilaus
+# Tilapäinen assosiaatio # Asiakas ja tuote sekä tilaus
 
 class Asiakas:
     def __init__(self, nimi):
@@ -90,8 +87,7 @@ asiakas1.tee_tilaus(tuote1)
 ```
 
 ```python
-# Staattinen luokkamuuttuja
-# Tili ja maksu sekä saldo
+# Staattinen luokkamuuttuja # Tili ja maksu sekä saldo
 
 class Tili:
     lkm = 0  # staattinen luokkamuuttuja
@@ -128,8 +124,7 @@ t2.tulostus()
 ```
 
 ```python
-# Periytyminen
-# Henkilö ja opiskelija
+# Periytyminen # Henkilö ja opiskelija
 
 class Person:
     def __init__(self, firstname, lastname):
@@ -205,8 +200,7 @@ kaikki_tyontekijat()
 ```
 
 ```python
-## Moniperintä
-# Kulkuneuvo ja urheiluväline sekä polkupyörä
+# Moniperintä # Kulkuneuvo ja urheiluväline sekä polkupyörä
 
 class Kulkuneuvo:  # luokka Kulkuneuvo
     def __init__(self, nopeus):
@@ -218,12 +212,9 @@ class Urheiluväline:  # luokka Urheiluväline
 
 class Polkupyörä(Kulkuneuvo, Urheiluväline):  
     # luokka Polkupyörä perii Kulkuneuvo ja Urheiluväline -luokat
-    def __init__(self, nopeus, paino, vaihteet):  
-        # konstruktori
-        Kulkuneuvo.__init__(self, nopeus)  
-        # kutsutaan yliluokkien konstruktoreita
-        Urheiluväline.__init__(self, paino)  
-        # kutsutaan yliluokkien konstruktoreita
+    def __init__(self, nopeus, paino, vaihteet):  # konstruktori
+        Kulkuneuvo.__init__(self, nopeus)  # kutsutaan yliluokkien konstruktoreita
+        Urheiluväline.__init__(self, paino)  # kutsutaan yliluokkien konstruktoreita
         self.vaihteet = vaihteet  # lisätään vaihteet
 
 # Pääohjelma
@@ -248,10 +239,8 @@ pyyntö = "https://api.tvmaze.com/search/shows?q=" + hakusana
 try:
     vastaus = requests.get(pyyntö)
     if vastaus.status_code==200:  # jos vastaus onnistui
-        json_vastaus = vastaus.json()  
-        # muutetaan vastaus json-muotoon
-        print(json.dumps(json_vastaus, indent=2))  
-        # tulostetaan vastaus json-muodossa
+        json_vastaus = vastaus.json()  # muutetaan vastaus json-muotoon
+        print(json.dumps(json_vastaus, indent=2))  # tulostetaan json-muodossa
         for a in json_vastaus:
             print(a["show"]["name"])
 except requests.exceptions.RequestException as e:  
@@ -269,8 +258,7 @@ hakusana = input("Anna hakusana: ")  # kysytään hakusana
 
 # Pyynnön malli: https://api.tvmaze.com/search/shows?q=girls
 pyynto = "https://api.tvmaze.com/search/shows?q=" + hakusana  
-vastaus = requests.get(pyynto).json()  
-# tehdään pyyntö ja muutetaan vastaus json-muotoon
+vastaus = requests.get(pyynto).json()  # muutetaan vastaus json-muotoon
 print(vastaus)  # tulostetaan vastaus json-muodossa
 
 
