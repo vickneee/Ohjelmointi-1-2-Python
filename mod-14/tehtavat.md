@@ -9,15 +9,11 @@ class Koira:
         self.syntymavuosi = syntymavuosi
         self.haukahdus = haukahdus
         Koira.koirien_lkm += 1  # kasvatetaan luokkamuuttujaa
-        print(f"Koiria luotu: {Koira.koirien_lkm} kpl")  
-        # tulostetaan luokkamuuttuja
+        print(f"Koiria luotu: {Koira.koirien_lkm} kpl")  # tulostetaan koirien lkm
 
     def hauku(self, kerrat):
         for i in range(kerrat):  # toistetaan kerrat kertaa
             print(f"{self.nimi} haukuu {self.haukahdus}")
-
-    def ika(self):
-        return 2024 - self.syntymavuosi  # palautetaan koiran ikä
 
 class Hoitola:
     def __init__(self):
@@ -39,7 +35,6 @@ class Hoitola:
 print("-- Koiria luodaan --")
 koira1 = Koira("Muro", 2018)
 koira2 = Koira("Rekku", 2022, "Viu viu viu")
-
 hoitola = Hoitola()
 hoitola.koira_sisaan(koira1)
 hoitola.koira_sisaan(koira2)
