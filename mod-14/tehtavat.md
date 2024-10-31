@@ -159,15 +159,13 @@ s1.plot()
 ```
 
 ```python
-# Periytyminen 
-# Työntekijä ja tuntipalkkainen sekä kuukausipalkkainen
+# Periytyminen # Työntekijä ja tuntipalkkainen sekä kuukausipalkkainen
 
 class Tyontekija:
     tyontekijoiden_lkm = 0  # staattinen luokkamuuttuja
     def __init__(self, etunimi, sukunimi):
         Tyontekija.tyontekijoiden_lkm += 1  # kasvatetaan luokkamuuttujaa
         self.tyontekijanumero = Tyontekija.tyontekijoiden_lkm  
-        # annetaan työntekijänumeroksi luokkamuuttujan arvo
         self.etunimi = etunimi
         self.sukunimi = sukunimi
 
