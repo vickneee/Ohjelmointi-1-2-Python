@@ -15,16 +15,16 @@ class Hissi:
 
     # Kerros ylös metodi
     def kerros_ylos(self):
-        self.kerros += 1
         if self.kerros <= self.ylin_kerros:
+            self.kerros += 1
             print(f"Hissi siirtyy {self.kerros} kerrokseeen")
         else:
             print("Hissi on jo ylimmässä kerroksessa.")
 
     # Kerros alas metodi
     def kerros_alas(self):
-        self.kerros -= 1
         if self.alin_kerros >= 1:
+            self.kerros -= 1
             print(f"Hissi siirtyy {self.kerros} kerrokseeen")
         else:
             print("Hissi on jo alimmassa kerroksessa.")
@@ -32,6 +32,7 @@ class Hissi:
     # Siirry kerrokseen metodi
     def siirry_kerrokseen(self, kohde_kerros):
         self.tulosta_kerros_alku()
+
         if kohde_kerros < self.alin_kerros:
             print("Valittua kerrosta ei ole olemassa")
             return  # Poistutaan metodista
