@@ -1,51 +1,39 @@
 ```python
-# Pysyvä assisiaatio
+# Pysyvä assisiaatio 
 # Koira ja hoitola
 
 class Koira:
-
-    koirien_lkm = 0  
-    # staattinen luokkamuuttuja
-
+    koirien_lkm = 0  # staattinen luokkamuuttuja
     def __init__(self, nimi, syntymavuosi, haukahdus="Vuh-vuh"):
         self.nimi = nimi
         self.syntymavuosi = syntymavuosi
         self.haukahdus = haukahdus
-        Koira.koirien_lkm += 1  
-        # kasvatetaan luokkamuuttujaa
+        Koira.koirien_lkm += 1  # kasvatetaan luokkamuuttujaa
         print(f"Koiria luotu: {Koira.koirien_lkm} kpl")  
         # tulostetaan luokkamuuttuja
 
     def hauku(self, kerrat):
-        for i in range(kerrat):  
-            # toistetaan kerrat kertaa
+        for i in range(kerrat):  # toistetaan kerrat kertaa
             print(f"{self.nimi} haukuu {self.haukahdus}")
 
     def ika(self):
-        return 2024 - self.syntymavuosi  
-        # palautetaan koiran ikä
-
+        return 2024 - self.syntymavuosi  # palautetaan koiran ikä
 
 class Hoitola:
     def __init__(self):
-        self.koirat = []  
-        # luodaan lista koirille hoitolassa, pysyvä assosiaatio
+        self.koirat = []  # luodaan lista koirille pysyvä assosiaatio
 
     def koira_sisaan(self, koira):
-        self.koirat.append(koira)  
-        # lisätään koira listaan
+        self.koirat.append(koira)  # lisätään koira listaan
         print(f"{koira.nimi} kirjattu sisään")
 
     def koira_ulos(self, koira):
-        self.koirat.remove(koira)  
-        # poistetaan koira listasta
+        self.koirat.remove(koira)  # poistetaan koira listasta
         print(f"{koira.nimi} kirjattu ulos")
 
     def tervehdi_koiria(self):
-        for koira in self.koirat:  
-            # käydään kaikki koirat läpi
+        for koira in self.koirat:  # käydään kaikki koirat läpi
             koira.hauku(1)
-
 
 # Pääohjelma
 print("-- Koiria luodaan --")
@@ -53,32 +41,28 @@ koira1 = Koira("Muro", 2018)
 koira2 = Koira("Rekku", 2022, "Viu viu viu")
 
 hoitola = Hoitola()
-print("-- Koira sisään --")
 hoitola.koira_sisaan(koira1)
 hoitola.koira_sisaan(koira2)
-print("-- Tervehdys --")
 hoitola.tervehdi_koiria()
-print("-- Koira ulos --")
 hoitola.koira_ulos(koira1)
-print("-- tervehdys --")
 hoitola.tervehdi_koiria()
 ```
 
 ```python
 # Tilapäinen assosiaatio
-
 # Auto ja maalaamo
 
 class Auto:
     def __init__(self, rekisteritunnus, väri):
         self.rekisteritunnus = rekisteritunnus
         self.väri = väri
-
+        
 class Maalaamo:
     def maalaa(self, auto, väri):  
         # metodi muuttaa auton väriä
         auto.väri = väri  # muutetaan auton väriä
 
+# Pääohjelma
 maalaamo = Maalaamo()
 auto = Auto("ABC-123", "sininen")
 print("Auto on " + auto.väri)
@@ -87,6 +71,7 @@ print("Auto on nyt " + auto.väri)
 ```
 
 ```python
+# Tilapäinen assosiaatio 
 # Asiakas ja tuote sekä tilaus
 
 class Asiakas:
@@ -95,7 +80,7 @@ class Asiakas:
 
     def tee_tilaus(self, tuote):
         print(f"{self.nimi} teki tilauksen tuotteelle {tuote.nimi}.")
-
+         
 class Tuote:
     def __init__(self, nimi, hinta):
         self.nimi = nimi
@@ -111,15 +96,11 @@ asiakas1.tee_tilaus(tuote1)
 
 ```python
 # Staattinen luokkamuuttuja
-
 # Tili ja maksu sekä saldo
 
 class Tili:
-
     lkm = 0  # staattinen luokkamuuttuja
-
-    def __init__(self, omistaja, saldo=0):  
-        # oletussaldo on 0
+    def __init__(self, omistaja, saldo=0):  # oletussaldo on 0
         self.omistaja = omistaja
         self.saldo = saldo
         Tili.lkm += 1  # kasvatetaan luokkamuuttujaa
@@ -137,7 +118,6 @@ class Tili:
     def tulostus(self):
         print(f"Omistaja: {self.omistaja}, tilillä rahaa {self.saldo}")
 
-
 # Pääohjelma
 print("--- tilien luonti ---")
 t1 = Tili("Jorma")
@@ -150,15 +130,10 @@ t2.maksa(25)
 print("--- tilien saldot ---")
 t1.tulostus()
 t2.tulostus()
-
-print("--- tilin uusi saldo ---")
-t2.maksa(25)
-t2.tulostus()
 ```
 
 ```python
 # Periytyminen
-
 # Henkilö ja opiskelija
 
 class Person:
@@ -169,7 +144,6 @@ class Person:
     def plot(self):  # metodi tulostaa nimen
         print(f"-- My name is {self.firstname} {self.lastname}")  
         # tulostetaan nimi
-
 
 class Student(Person):  # Student perii Person-luokan
     def __init__(self, firstname, lastname, student_nr):
@@ -182,7 +156,7 @@ class Student(Person):  # Student perii Person-luokan
         print(f"and my student number is {self.student_nr}")  
         # tulostetaan lisäksi opiskelijanumero
 
-
+# Pääohjelma
 p1 = Person("James", "Bond")
 s1 = Student("Johnny", "English", 321)
 p1.plot()
@@ -190,15 +164,14 @@ s1.plot()
 ```
 
 ```python
+# Periytyminen 
 # Työntekijä ja tuntipalkkainen sekä kuukausipalkkainen
 
 class Tyontekija:
-    tyontekijoiden_lkm = 0  
-    # staattinen luokkamuuttuja
+    tyontekijoiden_lkm = 0  # staattinen luokkamuuttuja
 
     def __init__(self, etunimi, sukunimi):
-        Tyontekija.tyontekijoiden_lkm += 1  
-        # kasvatetaan luokkamuuttujaa
+        Tyontekija.tyontekijoiden_lkm += 1  # kasvatetaan luokkamuuttujaa
         self.tyontekijanumero = Tyontekija.tyontekijoiden_lkm  
         # annetaan työntekijänumeroksi luokkamuuttujan arvo
         self.etunimi = etunimi
@@ -207,15 +180,13 @@ class Tyontekija:
     def tulosta_tiedot(self):  # tulostetaan työntekijän tiedot
         print(f"{self.tyontekijanumero}: {self.etunimi} {self.sukunimi}")
 
-
 class Tuntipalkkainen(Tyontekija):
     def __init__(self, etunimi, sukunimi, tuntipalkka):
-        super().__init__(etunimi, sukunimi)
+        super().__init__(etunimi, sukunimi) # kutsutaan yliluokan konstruktoria 
         self.tuntipalkka = tuntipalkka
 
     def tulosta_tiedot(self): 
-        super().tulosta_tiedot()  
-        # kutsutaan yliluokan metodia. 
+        super().tulosta_tiedot()  # kutsutaan yliluokan metodia. 
         # Metodi ylikirjoittaa yliluokan metodia
         print(f" Tuntipalkka: {self.tuntipalkka}")  
         # lisätään tuntipalkka
@@ -223,18 +194,15 @@ class Tuntipalkkainen(Tyontekija):
 
 class Kuukausipalkkainen(Tyontekija):
     def __init__(self, etunimi, sukunimi, kuukausipalkka):
-        super().__init__(etunimi, sukunimi)  
-        # kutsutaan yliluokan konstruktoria 
+        super().__init__(etunimi, sukunimi)  # kutsutaan yliluokan konstruktoria 
         self.kuukausipalkka = kuukausipalkka  
         # lisätään kuukausipalkka
 
     def tulosta_tiedot(self):  
-        super().tulosta_tiedot()  
-        # kutsutaan yliluokan metodia. 
+        super().tulosta_tiedot()  # kutsutaan yliluokan metodia. 
         # Metodi ylikirjoittaa yliluokan metodia
         print(f" Kuukausipalkka: {self.kuukausipalkka}")  
         # lisätään kuukausipalkka
-
 
 # Pääohjelma
 def kaikki_tyontekijat():
@@ -247,14 +215,12 @@ def kaikki_tyontekijat():
     for t in tyontekijat:
         t.tulosta_tiedot()
 
-
 kaikki_tyontekijat()
 ```
 
 ```python
 ## Moniperintä
 # Kulkuneuvo ja urheiluväline sekä polkupyörä
-
 
 class Kulkuneuvo:  # luokka Kulkuneuvo
     def __init__(self, nopeus):
@@ -274,6 +240,7 @@ class Polkupyörä(Kulkuneuvo, Urheiluväline):
         # kutsutaan yliluokkien konstruktoreita
         self.vaihteet = vaihteet  # lisätään vaihteet
 
+# Pääohjelma
 pp = Polkupyörä(45, 18.7, 3)
 print (pp.vaihteet)
 print (pp.nopeus)
@@ -307,7 +274,7 @@ except requests.exceptions.RequestException as e:
 ```
 
 ```python
-# Rajapinta
+# Rajapinta ja Flask
 
 import requests
 import json
