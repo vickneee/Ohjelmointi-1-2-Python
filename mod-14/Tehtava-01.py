@@ -33,5 +33,6 @@ print("--- tilien saldot ---")
 t1.tulostus()
 t2.tulostus()
 
+print("--- tilin uusi saldo ---")
 t2.maksa(25)
 t2.tulostus()
