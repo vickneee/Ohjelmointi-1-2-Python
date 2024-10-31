@@ -15,16 +15,16 @@ class Hissi:
 
     # Metodi hissin siirtämiseksi ylöspäin
     def kerros_ylos(self):
-        self.kerros += 1
         if self.kerros <= self.ylin_kerros:
+            self.kerros += 1
             print(f"Hissi nro {self.hissin_nro} siirtyy {self.kerros} kerrokseen")
         else:
             print(f"Hissi nro {self.hissin_nro} on jo ylimmässä kerroksessa.")
 
     # Metodi hissin siirtämiseksi alaspäin
     def kerros_alas(self):
-        self.kerros -= 1
         if self.kerros >= self.alin_kerros:
+            self.kerros -= 1
             print(f"Hissi nro {self.hissin_nro} siirtyy {self.kerros} kerrokseen")
         else:
             print(f"Hissi nro {self.hissin_nro} on jo alimmassa kerroksessa.")
@@ -32,6 +32,7 @@ class Hissi:
     # Metodi hissin siirtämiseksi haluttuun kohdekerrokseen (functio)
     def siirry_kerrokseen(self, kohde_kerros):
         self.tulosta_kerros_alku()
+
         if kohde_kerros < self.alin_kerros:
             print("Valittua kerrosta ei ole olemassa")
             return  # Poistutaan metodista
@@ -43,6 +44,7 @@ class Hissi:
             self.kerros_alas()
         while self.kerros < kohde_kerros:
             self.kerros_ylos()
+
         self.tulosta_kerros_loppu()
 
     def tulosta_kerros_alku(self):
@@ -58,15 +60,14 @@ class Talo:
         self.alin_kerros = alin_kerros
         self.ylin_kerros = ylin_kerros
         self.hissien_lkm = hissien_lkm
-        # Luodaan tyhjä lista hisseille
-        self.hissit = []
-        self.luo_hissit()
+        self.hissit = []  # Luodaan tyhjä lista hisseille
+        self.luo_hissit()  # Kutsutaan metodia hissien luomiseksi
 
     # Luodaan hissit
     def luo_hissit(self):
         for hissi in range(self.hissien_lkm):
             self.hissit.append(Hissi(self.alin_kerros, self.ylin_kerros, hissi + 1))
-            # print(f"Luotiin hissi numero {hissi + 1} kerroksiin {alin_kerros} - {ylin_kerros}")
+            # print(f"Luotiin hissi numero {hissi + 1} kerroksiin {self.alin_kerros} - {self.ylin_kerros}")
 
     # Metodi hissin ajamiseksi (functio)
     def kayta_hissia(self, hissi_numero, kohde_kerros):
