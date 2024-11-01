@@ -1,21 +1,21 @@
 import requests
-# import json
 
-hakusana = input("Anna hakusana: ")
 
-try:
-    response = requests.get("https://api.tvmaze.com/search/shows?q=" + hakusana)
+def get_joke(url):
 
-    if response.status_code == 200:
+    try:
+        response = requests.get(url)
         data = response.json()
-        # print(json.dumps(data, indent=2))
-        # print(data)
+        print(data["value"])
 
-        for sarja in data:
-            print(f"Name: {sarja["show"]["name"]}")
-            # print(f"Language: {sarja["show"]["language"]}")
-    else:
-        print("Hakusanalla ei löytynyt sarjoja.")
+    except requests.exceptions.RequestException as e:
+        print(f"Hakua ei voitu suorittaa.\n{e}")
 
-except requests.exceptions.RequestException as e:
-    print("Hakua ei voitu suorittaa.")
+
+def main():
+    url = "https://api.chucknorris.io/jokes/random"
+    get_joke(url)
+
+
+if __name__ == "__main__":
+    main()
