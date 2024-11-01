@@ -4,12 +4,9 @@ rajapinnan dokumentaatioon riittävästi. Palveluun rekisteröityminen on tarpee
 tarvittavan API-avaimen (API key). Selvitä myös, miten saat Kelvin-asteet muunnettua Celsius-asteiksi."""
 
 import os
-# Importoidaan tarvittavat kirjastot.
 import requests
 from dotenv import load_dotenv
-# import json
 
-# Ladataan ympäristömuuttujat.
 load_dotenv()
 
 # OpenWeather API.
@@ -17,31 +14,22 @@ url = "https://api.openweathermap.org/data/2.5/weather"
 # API key
 api_key = os.getenv("API_KEY")
 
-# Kysytään käyttäjältä paikkakunnan nimi.
-city = input("Anna paikkakunnan nimi: ")
 
-# Kokeillaan hakea säätila paikkakunnalta.
-try:
-    # https://openweathermap.org/api/geocoding-api  # q=London,uk, appid=api_key
-    # https://openweathermap.org/current#data  # units=metric
-    # Kyselyparametrit: q (query), appid (API key), units (yksiköt to metric, tämä on valinnainen)
-    response = requests.get(url, params={"q": city, "appid": api_key, "units": "metric"})
+def get_weather(city):
+    try:
+        response = requests.get(url, params={"q": city, "appid": api_key, "units": "metric", "lang": "fi"})
+        data = response.json()
+        print(f"Sää paikkakunnalla {city}: {data['weather'][0]['description']}")
+        print(f"Lämpötila: {data['main']['temp']}°C")
+    except requests.exceptions.RequestException as e:
+        print(f"Hakua ei voitu suorittaa.\n{e}")
 
-    # Tiedot saadaan JSON-muodossa.
-    data = response.json()
 
-    # Tulostetaan JSON-muotoiset tiedot.
-    # print(json.dumps(data, indent=2))
+# Pääohjelma
+def main():
+    city = input("Anna paikkakunnan nimi: ")
+    get_weather(city)
 
-    # Tulostetaan säätila paikkakunnalla.
-    print(f"Sää paikkakunnalla {city}: {data['weather'][0]['description']}")
-    # Tulostetaan lämpötila Celsius-asteina.
-    print(f"Lämpötila: {data['main']['temp']}°C")
 
-    # Lisätehtävä: Tulosta myös paikkakunnan koordinaatit (latitude ja longitude).
-    print(f"latitude: {data['coord']['lat']}")
-    print(f"longitude: {data['coord']['lon']}")
-
-# Virheenkäsittely.
-except requests.exceptions.RequestException as e:
-    print("Hakua ei voitu suorittaa.")
+if __name__ == "__main__":
+    main()

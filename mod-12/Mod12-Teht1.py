@@ -3,24 +3,24 @@ esiteltävää rajapintaa: https://api.chucknorris.io/. Käyttäjälle on näyte
 
 # Importoidaan tarvittavat kirjastot.
 import requests
+
+
 # import json
+def get_joke(url):
 
-# Chuck Norris API.
-url = "https://api.chucknorris.io/jokes/random"
+    try:
+        response = requests.get(url)
+        data = response.json()
+        print(data["value"])
 
-# Kokeillaan hakea Chuck Norris -vitsi.
-try:
-    # Kysely, jolla haetaan satunnainen vitsi. Parametrit: ei ole.
-    response = requests.get(url)
-    # Tiedot saadaan JSON-muodossa.
-    data = response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Hakua ei voitu suorittaa.\n{e}")
 
-    # Tulostetaan JSON-muotoiset tiedot.
-    # print(json.dumps(data, indent=2))
 
-    # Tulostetaan vitsi.
-    print(data["value"])
+def main():
+    url = "https://api.chucknorris.io/jokes/random"
+    get_joke(url)
 
-# Virheenkäsittely
-except requests.exceptions.RequestException as e:
-    print("Hakua ei voitu suorittaa.")
+
+if __name__ == "__main__":
+    main()
