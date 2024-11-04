@@ -19,7 +19,7 @@
         <p style="color: red;">{{ error }}</p>
     {% endif %}
     <form method="POST">
-        <label for="icao_code">Syötä ICAO-koodi:</label>
+        <label for="icao_code">Valitse ICAO-koodi:</label>
         <select id="icao_code" name="icao_code" required>
             {% for code in icao_codes %}
                 <option value="{{ code }}">{{ code }}</option>

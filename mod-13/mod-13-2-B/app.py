@@ -4,13 +4,10 @@ import folium
 
 app = Flask(__name__)
 
-# Define the list of ICAO codes as a constant
-ICAO_CODES = [
-    'EFHK', 'ENGM', 'EGLL', 'LFPG', 'LEMD', 'EDDB',
-    'LIRF', 'LPPT', 'EIDW', 'LOWW', 'LGAV', 'EBBR',
-    'ESSA', 'EPWA', 'LHBP', 'LROP', 'LKPR', 'LYBE',
-    'BIKF', 'LBSF', 'UKBB'
-]
+ICAO_CODES = ['----', 'EFHK', 'ENGM', 'EGLL', 'LFPG',
+              'LEMD', 'EDDB', 'LIRF', 'LPPT', 'EIDW',
+              'LOWW', 'LGAV', 'EBBR', 'ESSA', 'EPWA',
+              'LHBP', 'LROP', 'LKPR', 'LYBE', 'BIKF', 'LBSF', 'UKBB']
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -31,10 +28,7 @@ def all_airports():
         result = db_query(sql, (icao,))
         if result:
             airport = result[0]
-            folium.Marker(
-                location=[airport["latitude_deg"], airport["longitude_deg"]],
-                popup=airport["name"]
-            ).add_to(m)
+            folium.Marker(location=[airport["latitude_deg"], airport["longitude_deg"]], popup=airport["name"]).add_to(m)
 
     map_html = m._repr_html_()
     return render_template('all_airports.html', map_html=map_html)
@@ -57,14 +51,8 @@ def lentokentta(icao_koodi):
 
         map_html = m._repr_html_()
 
-        airport_data = {
-            "ICAO": airport["ident"],
-            "Name": airport["name"],
-            "Municipality": airport["municipality"],
-            "Latitude": airport["latitude_deg"],
-            "Longitude": airport["longitude_deg"],
-            "Map": map_html
-        }
+        airport_data = {"ICAO": airport["ident"], "Name": airport["name"], "Municipality": airport["municipality"],
+                        "Latitude": airport["latitude_deg"], "Longitude": airport["longitude_deg"], "Map": map_html}
 
         return render_template('result.html', airport=airport_data, icao_codes=ICAO_CODES)
 
