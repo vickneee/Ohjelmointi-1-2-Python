@@ -7,7 +7,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 
-@app.route('/alkuluku/<value>')
+@app.route('/alkuluku/<int:value>')
 def is_prime_route(value):
     try:
         number = int(value)

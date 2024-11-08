@@ -28,32 +28,3 @@ def db_query(sql, params=None):
     cursor.close()
     connection.close()
     return result
-
-
-# Insert into the database
-def db_insert(sql, params=None):
-    connection = get_db_connection()
-    cursor = connection.cursor()
-    cursor.execute(sql, params)
-    last_row_id = cursor.lastrowid
-    cursor.close()
-    connection.close()
-    return last_row_id
-
-
-# Delete from the database
-def db_delete(sql, params=None):
-    connection = get_db_connection()
-    cursor = connection.cursor()
-    cursor.execute(sql, params)
-    cursor.close()
-    connection.close()
-
-
-# Update the database
-def db_update(sql, params=None):
-    connection = get_db_connection()
-    cursor = connection.cursor()
-    cursor.execute(sql, params)
-    cursor.close()
-    connection.close()
