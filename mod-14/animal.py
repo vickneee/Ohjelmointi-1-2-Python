@@ -9,6 +9,3 @@ class Animal:
 
     def sleep(self):
         print(f"{self.name} is sleeping")
-
-
-

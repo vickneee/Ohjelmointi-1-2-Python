@@ -8,4 +8,3 @@ class Cat(Animal):
 
     def walking(self):
         print(f"{self.name} is walking outside!")
-
