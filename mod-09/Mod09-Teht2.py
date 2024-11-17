@@ -17,9 +17,9 @@ class Auto:
     # Kiihdytä-metodi (funktio)
     def kiihdyta(self, muutos):
         self.nopeus += muutos
-        if self.nopeus + muutos < 0:
+        if self.nopeus < 0:
             self.nopeus = 0
-        if self.nopeus + muutos > self.huippunopeus:
+        if self.nopeus > self.huippunopeus:
             self.nopeus = self.huippunopeus
 
 
@@ -34,10 +34,10 @@ print(f"Rekisteritunnus: {auto1.rekisteritunnus} \n"
 
 # Kiihdytetään autoa 30 km/h
 auto1.kiihdyta(+30)
-# print(f"Auto nopeus: {auto1.nopeus}")
+print(f"Auto nopeus: {auto1.nopeus}")
 # Kiihdytetään autoa vielä 70 km/h
 auto1.kiihdyta(+70)
-# print(f"Auto nopeus: {auto1.nopeus}")
+print(f"Auto nopeus: {auto1.nopeus}")
 # Kiihdytetään autoa vielä 50 km/h
 auto1.kiihdyta(+50)
 # Tulostetaan nopeus (speed) 30 + 70 + 50 = 150 km/h
