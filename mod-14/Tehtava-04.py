@@ -13,7 +13,6 @@ class Koira:
         print(f"{self.nimi} haukuu {kertaa} kertaa")
         for i in range(kertaa):
             print(f"{self.haukahdus}")
-        print(f"{self.nimi} on {2024-self.syntymavuosi} vuotta vanha")
 
 
 koira1 = Koira("Muro", 2018)
