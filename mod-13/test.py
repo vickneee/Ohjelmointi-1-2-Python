@@ -9,12 +9,12 @@ def summa():
         args = request.args
         luku1 = float(args.get("luku1"))
         luku2 = float(args.get("luku2"))
-        summa = luku1+luku2
+        loppu_summa = luku1 + luku2
 
         vastaus = {
             "luku1": luku1,
             "luku2": luku2,
-            "summa": summa
+            "summa": loppu_summa
         }
 
         return jsonify(vastaus)
