@@ -1,3 +1,3 @@
 # Ohjelmointi-1-2-Python
 
-Ohjelmointi1-2 Python tehtävät.
+Ohjelmointi 1 ja 2 Python tehtävät.
